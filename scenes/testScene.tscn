@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://disd6ppunn5b8"]
 
-[ext_resource type="PackedScene" uid="uid://bkcum44ela4cm" path="res://scenes/character.tscn" id="2_vp6dn"]
+[ext_resource type="PackedScene" uid="uid://dmuwgeonfxppi" path="res://scenes/character.tscn" id="2_vp6dn"]
 [ext_resource type="PackedScene" uid="uid://bkodx2xwr2g1" path="res://scenes/obstacles/bumper.tscn" id="2_yvvps"]
 
 [sub_resource type="Shader" id="Shader_qpdjr"]

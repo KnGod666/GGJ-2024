@@ -1,7 +1,7 @@
 extends Node2D
 @onready var raycast = $RayCast2D
 var move_direction = Vector2(0,0)
-var speed = 200
+var speed = 500
 # Called when the node enters the scene tree for the first time.
 
 
@@ -25,11 +25,6 @@ func _input(event):
 
 
 func _physics_process(delta):
-	#raycast.target_position = move_direction*speed*delta+Vector2(50,50)*move_direction
-	#raycast.force_raycast_update()
-	#if raycast.is_colliding():
-	#	move_direction = move_direction.bounce(raycast.get_collision_normal())
-	#	pass
 	position += move_direction*speed*delta
 	print(move_direction)
 	#Flipea XxXxXxXxXxXxX
