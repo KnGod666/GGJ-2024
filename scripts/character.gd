@@ -1,19 +1,28 @@
 extends Node2D
 @onready var raycast = $RayCast2D
 var move_direction = Vector2(0,0)
-var speed = 500
+var speed = 200
 # Called when the node enters the scene tree for the first time.
+
+
 func _ready():
 	get_viewport().warp_mouse(position)
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	pass # Replace with function body.
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		var e = event as InputEventMouseMotion
 		if e.velocity.length() > 400:
 			move_direction = e.velocity.normalized()
-	pass
+#Por aca lo que hace es dar la anim de cuando se mueve y esta quieto XxXxXxXxXxXxXxX
+		if e.velocity > Vector2(0,0):
+			$Sprite2D.frame_coords = Vector2(1,0)
+		if e.velocity == Vector2(0,0):
+			$Sprite2D.frame_coords = Vector2(0,0)
+			pass
+
 
 func _physics_process(delta):
 	#raycast.target_position = move_direction*speed*delta+Vector2(50,50)*move_direction
@@ -22,12 +31,20 @@ func _physics_process(delta):
 	#	move_direction = move_direction.bounce(raycast.get_collision_normal())
 	#	pass
 	position += move_direction*speed*delta
-	
+	print(move_direction)
+	#Flipea XxXxXxXxXxXxX
+	if move_direction >= Vector2(0,0):
+		$Sprite2D.flip_h = false
+	if move_direction <= Vector2(0,0):
+		$Sprite2D.flip_h = true
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(delta):
 	pass
-
+	
+	
 #cuando "muere" se ejecuta esto, no se q va a hacer de momento probablemente algo random
 func kill():
 	pass

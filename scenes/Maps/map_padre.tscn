@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv2rmx63yn77t"]
+[gd_scene load_steps=8 format=3 uid="uid://dv2rmx63yn77t"]
 
 [ext_resource type="Script" path="res://scripts/Map/map_padre.gd" id="1_n04t2"]
 [ext_resource type="Texture2D" uid="uid://dwkytre8gwish" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
 [ext_resource type="Texture2D" uid="uid://6vuwuesrhatv" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
-[ext_resource type="PackedScene" uid="uid://dmuwgeonfxppi" path="res://scenes/character.tscn" id="4_dgu8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yukxc"]
 texture = ExtResource("2_fdsp7")
@@ -142,6 +141,3 @@ format = 2
 [node name="Particulas" type="Node2D" parent="."]
 
 [node name="Areas" type="Node2D" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("4_dgu8n")]
-position = Vector2(566, 400)
