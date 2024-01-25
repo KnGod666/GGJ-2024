@@ -1,7 +1,7 @@
 extends Node2D
 @onready var raycast = $RayCast2D
 var speed = Vector2(0,0)
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for te first time.
 func _ready():
 	get_viewport().warp_mouse(position)
 	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
