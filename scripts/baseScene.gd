@@ -6,7 +6,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	play_initial_cutscene()
-	changeMap(0,0)
+	changeMap(1,0)
 	pass # Replace with function body.
 
 
@@ -18,7 +18,7 @@ func play_initial_cutscene():
 	pass
 
 func changeMap(id, spawn):
-	var scene = load(GlobalConstants.maps_ids[0])
+	var scene = load(GlobalConstants.maps_ids[id])
 	if scene.can_instantiate():
 		scene = scene.instantiate()
 
