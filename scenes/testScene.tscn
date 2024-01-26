@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://beyeey78iegq"]
+[gd_scene load_steps=14 format=3 uid="uid://beyeey78iegq"]
 
 [ext_resource type="PackedScene" uid="uid://bkcum44ela4cm" path="res://scenes/character.tscn" id="2_vp6dn"]
 [ext_resource type="PackedScene" uid="uid://bkodx2xwr2g1" path="res://scenes/obstacles/bumper.tscn" id="2_yvvps"]
-[ext_resource type="Texture2D" path="res://resources/Logo.png" id="3_xcptr"]
-[ext_resource type="PackedScene" uid="uid://cxhecx1k03sm6" path="res://scenes/DialogBox.tscn" id="4_h6tn0"]
+[ext_resource type="Texture2D" uid="uid://bguphebdxuhig" path="res://resources/Logo.png" id="3_xcptr"]
+[ext_resource type="PackedScene" uid="uid://b254v84nbpjs6" path="res://scenes/DialogBox.tscn" id="4_h6tn0"]
+[ext_resource type="PackedScene" uid="uid://br2nixytv6qa7" path="res://scenes/npc_bad.tscn" id="5_kdqo0"]
 
 [sub_resource type="Shader" id="Shader_qpdjr"]
 code = "shader_type canvas_item;
@@ -10911,3 +10912,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65537, 327680, 65536, 65538, 327680, 65536, 65539, 327680, 65536, 65540, 327680, 65536, 65541, 327680, 65536, 65542, 327680, 65536, 65543, 327680, 65536, 65545, 327680, 65536, 65544, 327680, 0, 131080, 327680, 0, 131081, 327680, 0, 131082, 327680, 0, 65546, 327680, 0, 10, 327680, 0, 9, 327680, 0, 8, 327680, 0, 7, 327680, 0, 6, 327680, 0, 5, 327680, 0, 4, 327680, 0, 3, 327680, 0, 2, 327680, 0, 1, 327680, 0)
 
 [node name="DialogBox" parent="." instance=ExtResource("4_h6tn0")]
+
+[node name="NPC Bad" parent="." instance=ExtResource("5_kdqo0")]
+position = Vector2(212, 313)
+scale = Vector2(0.425, 0.425)

@@ -61,7 +61,6 @@ func _on_player_area_area_entered(area):
 
 
 func _on_player_area_body_entered(body):
-	print("lol")
 	raycast.target_position = move_direction*Vector2(100,100)
 	raycast.force_raycast_update()
 	if raycast.is_colliding():

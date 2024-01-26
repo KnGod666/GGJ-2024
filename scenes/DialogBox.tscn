@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxhecx1k03sm6"]
+[gd_scene load_steps=3 format=3 uid="uid://b254v84nbpjs6"]
 
 [ext_resource type="Script" path="res://scripts/DialogBox.cs" id="1_jnh05"]
 [ext_resource type="Script" path="res://scripts/DialogBar.cs" id="2_23ulx"]
