@@ -1,3 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
-project.godot
+*.import
+*.compiled
+*.err
+*.csproj
+*.sln
+*.dll
+/bin
+/obj    
+/Library
+.log
+.lock
+.tmp
+.vscode 
+.mono
+.godot
