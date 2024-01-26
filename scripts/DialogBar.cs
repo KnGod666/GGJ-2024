@@ -1,6 +1,5 @@
 using Dialogs;
 using Godot;
-using System.Collections.Generic;
 
 public partial class DialogBar : PanelContainer
 {
@@ -70,5 +69,8 @@ public partial class DialogBar : PanelContainer
 				Hide();
 			}
 		}
+	}
+	public void prueba(){
+		GD.Print("------------------------------------------------------------------------------------");
 	}
 }
