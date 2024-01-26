@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6m6mtp15y0m2"]
+
+[ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_srw7e"]
+
+[node name="obstacle" type="Node2D"]
+script = ExtResource("1_srw7e")
+
+[node name="ObstacleSprite" type="Sprite2D" parent="."]
+
+[node name="ObstacleArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleArea"]
+
+[connection signal="area_entered" from="ObstacleArea" to="." method="_on_obstacle_area_area_entered"]
