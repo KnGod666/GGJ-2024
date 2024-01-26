@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://br2nixytv6qa7"]
+
+[ext_resource type="PackedScene" uid="uid://b6m6mtp15y0m2" path="res://scenes/obstacles/obstacle.tscn" id="1_h7bpv"]
+[ext_resource type="Texture2D" uid="uid://bpwgjy0815kls" path="res://resources/Character/28 sin título2_20240126183353.png" id="2_itnih"]
+[ext_resource type="Texture2D" uid="uid://cjkbmoy4k5cdj" path="res://resources/QRs/Malos.png" id="3_5f7kw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia6mr"]
+size = Vector2(20, 22.6033)
+
+[node name="NPC Bad" instance=ExtResource("1_h7bpv")]
+
+[node name="ObstacleSprite" parent="." index="0"]
+texture = ExtResource("2_itnih")
+
+[node name="QR" type="Sprite2D" parent="." index="1"]
+z_index = -1
+position = Vector2(0, -5.915)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("3_5f7kw")
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="CollisionShape2D" parent="ObstacleArea" index="0"]
+position = Vector2(0, -8.5)
+scale = Vector2(11.37, 11.37)
+shape = SubResource("RectangleShape2D_ia6mr")
