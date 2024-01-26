@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://disd6ppunn5b8"]
+
+[ext_resource type="PackedScene" uid="uid://bkcum44ela4cm" path="res://scenes/character.tscn" id="2_vp6dn"]
+
+[sub_resource type="Shader" id="Shader_qpdjr"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	COLOR = vec4(1,1,1,1);
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxidj"]
+shader = SubResource("Shader_qpdjr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqbvo"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+material = SubResource("ShaderMaterial_rxidj")
+position = Vector2(660, 312)
+input_pickable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+material = SubResource("ShaderMaterial_jqbvo")
+use_parent_material = true
+polygon = PackedVector2Array(-599, -266, 469, -268, 466, 329, -627, 334, -618, -317, -676, -319, -676, 406, 530, 397, 526, -342, -604, -327)
+
+[node name="Node2D" parent="." instance=ExtResource("2_vp6dn")]
+position = Vector2(620, 363)
