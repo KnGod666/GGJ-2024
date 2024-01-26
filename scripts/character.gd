@@ -44,24 +44,24 @@ func kill():
 
 
 func _on_player_area_area_entered(area):
-	#raycast.target_position = move_direction*Vector2(100,100)
-	#raycast.force_raycast_update()
-	#if raycast.is_colliding():
-		#move_direction = move_direction.bounce(raycast.get_collision_normal())
-		#return
-	#raycast.target_position = global_position-area.global_position
-	#raycast.force_raycast_update()
-	#if(raycast.is_colliding()):
-		#move_direction = move_direction.bounce(raycast.get_collision_normal())
-	#raycast.target_position = area.global_position-global_position
-	#raycast.force_raycast_update()
-	#if(raycast.is_colliding()):
-		#move_direction = move_direction.bounce(raycast.get_collision_normal())
+	raycast.target_position = move_direction*Vector2(120,120)
+	raycast.force_raycast_update()
+	if raycast.is_colliding():
+		move_direction = move_direction.bounce(raycast.get_collision_normal())
+		return
+	raycast.target_position = global_position-area.global_position
+	raycast.force_raycast_update()
+	if(raycast.is_colliding()):
+		move_direction = move_direction.bounce(raycast.get_collision_normal())
+	raycast.target_position = area.global_position-global_position
+	raycast.force_raycast_update()
+	if(raycast.is_colliding()):
+		move_direction = move_direction.bounce(raycast.get_collision_normal())
 	pass
 
 
 func _on_player_area_body_entered(body):
-	raycast.target_position = move_direction*Vector2(100,100)
+	raycast.target_position = move_direction*Vector2(120,120)
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
