@@ -1,14 +1,18 @@
 using System.Collections.Generic;
+using Godot;
 
 namespace Dialogs;
 
-public class Dialogs 
+public class DialogsClass 
 {
     public readonly Dictionary<string, Dictionary<string, List<string>>> Texts = new();
     
-    public Dialogs()
+    public DialogsClass()
     {
-        
+
+    }
+    public Dictionary<string, List<string>> GetDictionary(){
+        return JoseDialogs();
     }
 
     private Dictionary<string, List<string>> JoseDialogs()
@@ -18,12 +22,11 @@ public class Dialogs
         var jose_muerte1 = new List<string>
         {
             "Te has encajado una espina de un aspecto sospechoso.",
-            "No mueres ni nada, pero enfermas de una enfermedad grave y desconocida.",
-            "Pero adivina cuál es la diferencia entre tú y una iglesia abandonada.",
+            "No mueres ni nada, pero enfermas de una enfermedad grave y desconocida...",
+            "Adivina cuál es la diferencia entre tú y una iglesia abandonada.",
             "Resulta que ninguno de los dos tiene cura."
         };
         jose_dialogs["muerte1"] = jose_muerte1;
-
         // Muerte 2
 
         var jose_muerte2 = new List<string>

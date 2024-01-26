@@ -1,3 +1,4 @@
+using Dialogs;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -44,10 +45,16 @@ public partial class DialogBar : PanelContainer
 
 	public void ShowMessages(string NpcName)
 	{
-		messages.Add("Texto aleatorio generado porque me da la gana.");
-		messages.Add("Segundo texto aleatorio generado porque me da la gana.");
-		messages.Add("Tercer aleatorio generado porque me da la gana.");
-		messages.Add("Caraculo.");
+		DialogsClass dialogs = new DialogsClass();
+		var texts = dialogs.GetDictionary();
+		foreach (string msg in texts[NpcName])
+		{
+			messages.Add(msg);
+		}
+		// messages.Add("Texto aleatorio generado porque me da la gana.");
+		// messages.Add("Segundo texto aleatorio generado porque me da la gana.");
+		// messages.Add("Tercer aleatorio generado porque me da la gana.");
+		// messages.Add("Caraculo.");
 		actualMessage = 0;
 		textPosition = 0;
 		dialogTextNode.Text = "";

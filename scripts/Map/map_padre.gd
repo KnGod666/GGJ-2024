@@ -1,4 +1,7 @@
 extends Node2D
+
+signal changeScene
+@export var spawns :Array
 var PosInit
 
 
