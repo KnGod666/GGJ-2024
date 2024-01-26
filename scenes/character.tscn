@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8xn4bgpr4rka" path="res://icon.svg" id="2_uycg0"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(650, 291)
 script = ExtResource("1_phnoy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
