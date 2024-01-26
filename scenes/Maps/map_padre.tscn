@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://deyg60omlxdri"]
 
 [ext_resource type="Script" path="res://scripts/Map/map_padre.gd" id="1_n04t2"]
-[ext_resource type="Texture2D" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
-[ext_resource type="Texture2D" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
-[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
+[ext_resource type="Texture2D" uid="uid://b25a5hqhebqsq" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
+[ext_resource type="Texture2D" uid="uid://bsmjn10ysqdip" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
+[ext_resource type="Texture2D" uid="uid://diqoo7vxw2lmj" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0
