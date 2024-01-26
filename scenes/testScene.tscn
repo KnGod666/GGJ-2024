@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://beyeey78iegq"]
 [gd_scene load_steps=9 format=3 uid="uid://beyeey78iegq"]
 
-[ext_resource type="PackedScene" uid="uid://r3wxy55ieyur" path="res://scenes/testCharacter.tscn" id="2_1fwjw"]
+[ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="2_1fwjw"]
 [ext_resource type="PackedScene" uid="uid://bkodx2xwr2g1" path="res://scenes/obstacles/bumper.tscn" id="2_yvvps"]
 [ext_resource type="Texture2D" uid="uid://bguphebdxuhig" path="res://resources/Logo.png" id="3_xcptr"]
 [ext_resource type="PackedScene" uid="uid://b254v84nbpjs6" path="res://scenes/DialogBox.tscn" id="4_h6tn0"]
@@ -36,6 +36,7 @@ size = Vector2(1144.5, 84)
 size = Vector2(158.75, 644)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oauik"]
+bounce = 1.0
 
 [node name="TestScene" type="Node2D"]
 
@@ -95,4 +96,4 @@ position = Vector2(212, 313)
 scale = Vector2(0.425, 0.425)
 
 [node name="testCharacter" parent="." instance=ExtResource("2_1fwjw")]
-position = Vector2(421, 300)
+position = Vector2(490, 288)

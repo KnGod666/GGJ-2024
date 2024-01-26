@@ -18,7 +18,10 @@ func play_initial_cutscene():
 	pass
 
 func changeMap(id, spawn):
-	#var scene = load(GlobalConstants.maps_ids[0]).instatiate()
-	#player.position = scene.spawns[spawn]
-	#maps.add_child(scene)
+	var scene = load(GlobalConstants.maps_ids[0])
+	if scene.can_instantiate():
+		scene = scene.instantiate()
+
+		player.position = scene.spawns[spawn]
+		maps.add_child(scene)
 	pass
