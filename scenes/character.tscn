@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkcum44ela4cm"]
+[gd_scene load_steps=4 format=3 uid="uid://bkcum44ela4cm"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_phnoy"]
 [ext_resource type="Texture2D" uid="uid://8xn4bgpr4rka" path="res://icon.svg" id="2_uycg0"]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2(650, 291)
+[sub_resource type="CircleShape2D" id="CircleShape2D_i01hp"]
+radius = 75.0
+
+[node name="Player" type="Node2D"]
 script = ExtResource("1_phnoy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uycg0")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+shape = SubResource("CircleShape2D_i01hp")
