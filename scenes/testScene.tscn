@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://disd6ppunn5b8"]
+[gd_scene load_steps=12 format=3 uid="uid://beyeey78iegq"]
 
-[ext_resource type="PackedScene" uid="uid://hfkncrvm0ite" path="res://scenes/testCharacter.tscn" id="2_1fwjw"]
+[ext_resource type="PackedScene" uid="uid://bkcum44ela4cm" path="res://scenes/character.tscn" id="2_vp6dn"]
 [ext_resource type="PackedScene" uid="uid://bkodx2xwr2g1" path="res://scenes/obstacles/bumper.tscn" id="2_yvvps"]
-[ext_resource type="Texture2D" uid="uid://bguphebdxuhig" path="res://resources/Logo.png" id="3_xcptr"]
+[ext_resource type="Texture2D" path="res://resources/Logo.png" id="3_xcptr"]
 
 [sub_resource type="Shader" id="Shader_qpdjr"]
 code = "shader_type canvas_item;
@@ -10846,11 +10846,15 @@ texture_region_size = Vector2i(100, 100)
 
 [sub_resource type="TileSet" id="TileSet_ikblj"]
 tile_size = Vector2i(100, 100)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 81
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_b15gf")
 sources/0 = SubResource("TileSetAtlasSource_xkxq2")
 
 [node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_vp6dn")]
+position = Vector2(536, 462)
 
 [node name="Area2D" type="Area2D" parent="."]
 material = SubResource("ShaderMaterial_rxidj")
@@ -10880,9 +10884,6 @@ position = Vector2(795, 365)
 position = Vector2(590, 355)
 zoom = Vector2(0.5, 0.5)
 
-[node name="testCharacter" parent="." instance=ExtResource("2_1fwjw")]
-position = Vector2(368, 310)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_oauik")
 
@@ -10906,4 +10907,4 @@ shape = SubResource("RectangleShape2D_b1eve")
 tile_set = SubResource("TileSet_ikblj")
 collision_visibility_mode = 1
 format = 2
-layer_0/tile_data = PackedInt32Array(65537, 327680, 65536, 65538, 327680, 65536, 65539, 327680, 65536, 65540, 327680, 65536, 65541, 327680, 65536, 65542, 327680, 65536, 65543, 327680, 65536)
+layer_0/tile_data = PackedInt32Array(65537, 327680, 65536, 65538, 327680, 65536, 65539, 327680, 65536, 65540, 327680, 65536, 65541, 327680, 65536, 65542, 327680, 65536, 65543, 327680, 65536, 65545, 327680, 65536, 65544, 327680, 0, 131080, 327680, 0, 131081, 327680, 0, 131082, 327680, 0, 65546, 327680, 0, 10, 327680, 0, 9, 327680, 0, 8, 327680, 0, 7, 327680, 0, 6, 327680, 0, 5, 327680, 0, 4, 327680, 0, 3, 327680, 0, 2, 327680, 0, 1, 327680, 0)
