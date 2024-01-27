@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://deyg60omlxdri"]
 
 [ext_resource type="Script" path="res://scripts/Map/map_padre.gd" id="1_n04t2"]
-[ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
-[ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
+[ext_resource type="Texture2D" uid="uid://b25a5hqhebqsq" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
+[ext_resource type="Texture2D" uid="uid://bsmjn10ysqdip" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
 [ext_resource type="Shader" path="res://shaders/bricks0.gdshader" id="2_h33y1"]
-[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
+[ext_resource type="Texture2D" uid="uid://diqoo7vxw2lmj" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0
@@ -176,23 +176,32 @@ texture_region_size = Vector2i(100, 100)
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-42.75, -41.75, -27.75, -9.25, -19.25, -45.75, -10.25, -2.75, 6.25, -35.75, 19.75, -7.25, 28.25, -50, 32.25, -21.75, 41.75, -38.75, 50, 50, -50, 50)
+2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_1/angular_velocity = 0.0
 6:0/0 = 0
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, -16.75, -50, 37.25, -43.75, 9.75, -28.25, 41.75, -19.25, -2.25, -13.25, 32.25, 4.25, 6.4892, 18.579, 40.25, 27.25, 19.3196, 32.5261, 33.25, 39.75, -50, 50)
+6:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_1/angular_velocity = 0.0
 8:0/0 = 0
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
 8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 18.75, 44.75, 42.75, 32.25, 11.25, 19.25, 43.75, 15.25, -1.25, -3.25, 37.75, -12.25, 8.75, -24.25, 44.75, -29.25, 22.75, -38.75, 36.75, -40.75, -9.25)
+8:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_1/angular_velocity = 0.0
 8:2/0 = 0
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
 8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.25, -32.75, -30.25, -42.25, 50, -50, 50, 50, -2.75, 44.75, -30.75, 40.75, -5.25, 26.75, -44.25, 15.25, 7.75, 9.25, -28.75, -7.75, 0.75, -18.75, -37.25, -32.25)
+8:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+8:2/0/physics_layer_1/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_n2rgg"]
 tile_size = Vector2i(100, 100)
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 11
+physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_viif8")
 
 [node name="MapPadre" type="Node2D"]
