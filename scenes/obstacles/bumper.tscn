@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkodx2xwr2g1"]
+[gd_scene load_steps=5 format=3 uid="uid://bkodx2xwr2g1"]
 
 [ext_resource type="PackedScene" uid="uid://b6m6mtp15y0m2" path="res://scenes/obstacles/obstacle.tscn" id="1_a8oer"]
 [ext_resource type="Texture2D" uid="uid://8xn4bgpr4rka" path="res://icon.svg" id="2_eivrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dn671"]
 size = Vector2(120, 120)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_51kru"]
+radius = 100.0
 
 [node name="bumper" instance=ExtResource("1_a8oer")]
 
@@ -14,3 +17,6 @@ texture = ExtResource("2_eivrw")
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_dn671")
 debug_color = Color(0, 0.6, 0.701961, 0.796078)
+
+[node name="CollisionShape2D2" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_51kru")

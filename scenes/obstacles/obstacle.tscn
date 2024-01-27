@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6m6mtp15y0m2"]
+[gd_scene load_steps=3 format=3 uid="uid://b6m6mtp15y0m2"]
 
 [ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_srw7e"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2ower"]
+bounce = 1.0
+
 [node name="obstacle" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_2ower")
+gravity_scale = 0.0
 script = ExtResource("1_srw7e")
 
 [node name="ObstacleSprite" type="Sprite2D" parent="."]
