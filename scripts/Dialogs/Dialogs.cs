@@ -3,7 +3,7 @@ using Godot;
 
 namespace Dialogs;
 
-public class DialogsClass 
+public partial class DialogsClass : Node
 {
 	public readonly Dictionary<string, Dictionary<string, List<string>>> Texts = new();
 	
