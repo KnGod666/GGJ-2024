@@ -1,6 +1,5 @@
 using Dialogs;
 using Godot;
-using System;
 using System.Collections.Generic;
 
 public partial class DialogBar : PanelContainer
@@ -34,7 +33,6 @@ public partial class DialogBar : PanelContainer
 	}
 	public bool NextMessage()
 	{
-		// GD.Print("VARS: ", textPosition," ", messages[actualMessage].Length," ", actualMessage," ", hasNext );
 		if(textPosition < messages[actualMessage].Length){
 			dialogTextNode.Text = messages[actualMessage];
 			textPosition = messages[actualMessage].Length;
@@ -43,7 +41,7 @@ public partial class DialogBar : PanelContainer
 		actualMessage++;
 		textPosition=0;
 		dialogTextNode.Text = "";
-		hasNext = actualMessage < messages.Count-1;
+		hasNext = actualMessage < messages.Count;
 		return hasNext;
 	}
 
