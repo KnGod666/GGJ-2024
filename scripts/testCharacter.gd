@@ -38,4 +38,3 @@ func _on_area_2d_body_entered(body):
 	if raycast.is_colliding():
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
 		return
-	print(body.name)

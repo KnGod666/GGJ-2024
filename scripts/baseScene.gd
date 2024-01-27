@@ -6,9 +6,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-	Input.warp_mouse(player.global_position)
 	play_initial_cutscene()
-	changeMap(1,0)
+	changeMap(0,0)
 	pass # Replace with function body.
 
 
@@ -29,4 +28,3 @@ func changeMap(id, spawn):
 		maps.call_deferred("add_child", scene)
 		scene.changeScene.connect(changeMap)
 	pass
-
