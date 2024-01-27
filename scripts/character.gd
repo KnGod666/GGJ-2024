@@ -51,7 +51,6 @@ func kill():
 
 
 func _on_player_area_area_entered(area):
-	var areas = $PlayerArea.get_overlapping_areas()
 	raycast.target_position = move_direction*Vector2(100,100)
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
@@ -65,4 +64,5 @@ func _on_player_area_area_entered(area):
 	raycast.force_raycast_update()
 	if(raycast.is_colliding()):
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
+	
 	pass # Replace with function body.
