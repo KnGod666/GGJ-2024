@@ -11,10 +11,13 @@ public partial class DialogBar : PanelContainer
 	private int textPosition = 0;
 	private int delay = 0;
 	private readonly int time_to_reset = 5; 
+
+	private bool hasNext = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		dialogTextNode = GetNode<RichTextLabel>("DialogBarText");
+		hasNext = true;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,9 +32,9 @@ public partial class DialogBar : PanelContainer
 		}
 		delay++;
 	}
-
 	public bool NextMessage()
 	{
+		// GD.Print("VARS: ", textPosition," ", messages[actualMessage].Length," ", actualMessage," ", hasNext );
 		if(textPosition < messages[actualMessage].Length){
 			dialogTextNode.Text = messages[actualMessage];
 			textPosition = messages[actualMessage].Length;
@@ -40,14 +43,15 @@ public partial class DialogBar : PanelContainer
 		actualMessage++;
 		textPosition=0;
 		dialogTextNode.Text = "";
-		return actualMessage < messages.Count;
+		hasNext = actualMessage < messages.Count-1;
+		return hasNext;
 	}
 
-	public void ShowMessages(string NpcName)
+	public void ShowMessages(string actualDialog)
 	{
 		DialogsClass dialogs = new DialogsClass();
 		var texts = dialogs.GetDictionary();
-		foreach (string msg in texts[NpcName])
+		foreach (string msg in texts[actualDialog])
 		{
 			messages.Add(msg);
 		}
@@ -58,5 +62,8 @@ public partial class DialogBar : PanelContainer
 		actualMessage = 0;
 		textPosition = 0;
 		dialogTextNode.Text = "";
+	}
+	public bool GetHasNext(){
+		return hasNext;
 	}
 }
