@@ -109,11 +109,13 @@ func Acciones():
 		txt = ["Eres un ser debil como una rosa blanca...", "PUAHHHH!!!!", "Que?? QUieres el orden de mi cabeza?", "Claro, xq no? El orden esta en la parte mas al norte de mis recuerdos, leelo bien."]
 		$NPCs/UltimaSombra.process_mode = Node.PROCESS_MODE_DISABLED
 		base.show_dialog(txt)
+		await get_tree().create_timer(8).timeout
 		$NPCs/UltimaSombra.process_mode = Node.PROCESS_MODE_INHERIT
 	if sombra == 0:
 		txt = ["Llevo dias programando algo inutil...", "Estoy desesperado!", "Ayudame a acomodar mis ideas en el orden correcto y te podras ir pasando por esa mancha negra de ahi.", "Una parte de mi recuerda el orden...", "Pero yo no..."]
 		$NPCs/Beginer.process_mode = Node.PROCESS_MODE_DISABLED
 		base.show_dialog(txt)
+		await get_tree().create_timer(8).timeout
 		$NPCs/Beginer.process_mode = Node.PROCESS_MODE_INHERIT
 	if sombra == 1:
 		if i <= 3:
