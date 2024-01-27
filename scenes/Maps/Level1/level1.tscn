@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://bwqbsibe8uwe3"]
 
 [ext_resource type="Script" path="res://scenes/Maps/Level1/lvl1.cs" id="1_d1o3o"]
-[ext_resource type="Texture2D" uid="uid://cti75idfk04w7" path="res://resources/Map/33 sin título_20240126181738.png" id="1_jf250"]
-[ext_resource type="Texture2D" uid="uid://dqmc7uwfm4qxh" path="res://resources/Map/Tile map.png" id="2_8arqs"]
-[ext_resource type="PackedScene" uid="uid://dmuwgeonfxppi" path="res://scenes/character.tscn" id="2_upy2n"]
+[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="1_jf250"]
+[ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="2_8arqs"]
+[ext_resource type="PackedScene" uid="uid://bkcum44ela4cm" path="res://scenes/character.tscn" id="2_upy2n"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="3_4walh"]
-[ext_resource type="Texture2D" uid="uid://ca4uvt3rryvl6" path="res://resources/Map/photo1706300487.jpeg" id="3_mxq01"]
+[ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="3_mxq01"]
 [ext_resource type="Script" path="res://scripts/DialogBar.cs" id="5_s8tkp"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_mv7it"]
