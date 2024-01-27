@@ -23,17 +23,28 @@ func _input(event):
 
 
 func _on_area_2d_body_entered(body):
-	raycast.target_position = move_direction*Vector2(100,100)
+	raycast.target_position = move_direction*Vector2(120,120)
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
 		return
-	raycast.target_position = global_position-body.global_position
+	raycast.target_position = (move_direction*Vector2(120,120)).rotated(PI/2)
 	raycast.force_raycast_update()
-	if(raycast.is_colliding()):
+	if raycast.is_colliding():
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
-	raycast.target_position = body.global_position-global_position
+		return
+	raycast.target_position = (move_direction*Vector2(120,120)).rotated(PI)
 	raycast.force_raycast_update()
-	if(raycast.is_colliding()):
+	if raycast.is_colliding():
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
-	pass # Replace with function body.
+		return
+	##raycast.target_position = global_position-body.global_position
+	##raycast.force_raycast_update()
+	##if(raycast.is_colliding()):
+		##move_direction = move_direction.bounce(raycast.get_collision_normal())
+		##return
+	##raycast.target_position = body.global_position-global_position
+	##raycast.force_raycast_update()
+	##if(raycast.is_colliding()):
+		##move_direction = move_direction.bounce(raycast.get_collision_normal())
+	#pass # Replace with function body.

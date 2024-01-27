@@ -32,6 +32,7 @@ size = Vector2(1144.5, 84)
 size = Vector2(158.75, 644)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oauik"]
+bounce = 1.0
 
 [node name="TestScene" type="Node2D"]
 
