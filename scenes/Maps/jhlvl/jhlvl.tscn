@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="4_olpqs"]
 [ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="6_yaphm"]
 [ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="7_k2kou"]
-[ext_resource type="PackedScene" path="res://scenes/Option.tscn" id="9_q16yx"]
+[ext_resource type="PackedScene" uid="uid://d0bddgoyr144w" path="res://scenes/Option.tscn" id="9_q16yx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0
