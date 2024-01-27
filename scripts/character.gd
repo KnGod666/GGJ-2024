@@ -1,7 +1,7 @@
 extends Node2D
 @onready var raycast = $RayCast2D
 var move_direction = Vector2(0,0)
-var speed = 200
+var speed = 500
 # Called when the node enters the scene tree for the first time.
 
 
@@ -25,14 +25,7 @@ func _input(event):
 
 
 func _physics_process(delta):
-	#raycast.target_position = move_direction*speed*delta+Vector2(50,50)*move_direction
-	#raycast.force_raycast_update()
-	#if raycast.is_colliding():
-	#	move_direction = move_direction.bounce(raycast.get_collision_normal())
-	#	pass
 	position += move_direction*speed*delta
-	print(move_direction)
-	#Flipea XxXxXxXxXxXxX
 	if move_direction >= Vector2(0,0):
 		$Sprite2D.flip_h = false
 	if move_direction <= Vector2(0,0):
@@ -64,5 +57,20 @@ func _on_player_area_area_entered(area):
 	raycast.force_raycast_update()
 	if(raycast.is_colliding()):
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
-	
-	pass # Replace with function body.
+
+
+func _on_player_area_body_entered(body):
+	print("lol")
+	raycast.target_position = move_direction*Vector2(100,100)
+	raycast.force_raycast_update()
+	if raycast.is_colliding():
+		move_direction = move_direction.bounce(raycast.get_collision_normal())
+		return
+	raycast.target_position = global_position-body.global_position
+	raycast.force_raycast_update()
+	if(raycast.is_colliding()):
+		move_direction = move_direction.bounce(raycast.get_collision_normal())
+	raycast.target_position = body.global_position-global_position
+	raycast.force_raycast_update()
+	if(raycast.is_colliding()):
+		move_direction = move_direction.bounce(raycast.get_collision_normal())
