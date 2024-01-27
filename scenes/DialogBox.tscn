@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/DialogBar.cs" id="2_23ulx"]
 
+
 [node name="DialogBar" type="PanelContainer"]
 offset_left = 9.0
 offset_top = 495.0
