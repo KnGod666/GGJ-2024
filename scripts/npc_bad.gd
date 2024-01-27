@@ -7,7 +7,6 @@ var der = false
 var puede = true
 
 func _ready():
-	$E.visible = false
 	$QR.frame_coords = qrCoords
 	pass
 

@@ -1,40 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmuwgeonfxppi"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_phnoy"]
-[ext_resource type="Texture2D" uid="uid://m2br3uapcc64" path="res://resources/Character/Character.png" id="2_ftv4r"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dltgj"]
-custom_solver_bias = 1.0
-size = Vector2(106, 122)
-
-[node name="Player" type="Node2D"]
-script = ExtResource("1_phnoy")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.16, 0.16)
-texture = ExtResource("2_ftv4r")
-hframes = 2
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-z_index = 1
-target_position = Vector2(0, 100)
-collision_mask = 17
-collide_with_areas = true
-
-[node name="PlayerArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 17
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_dltgj")
-
-[connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]
-[connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]
-
-[gd_scene load_steps=4 format=3 uid="uid://dmuwgeonfxppi"]
-
-[ext_resource type="Script" path="res://scripts/character.gd" id="1_phnoy"]
 [ext_resource type="Texture2D" uid="uid://bus4w7jri10oe" path="res://resources/Character/Character.png" id="2_ftv4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dltgj"]
