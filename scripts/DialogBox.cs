@@ -22,8 +22,13 @@ public partial class DialogBox : Control
     {
         base._Input(@event);
 		if(@event.IsActionPressed(ACTION)){
-			if(!dialog_box.NextMessage()){
-				dialog_box.Hide();
+			if(dialog_box.GetHasNext())
+			{
+				if(!dialog_box.NextMessage())
+				{
+					dialog_box.Hide();
+				}
+
 			}
 		}
     }
