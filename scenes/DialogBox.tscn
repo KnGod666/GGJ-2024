@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxhecx1k03sm6"]
+[gd_scene load_steps=3 format=3 uid="uid://cxhecx1k03sm6"]
 
 [ext_resource type="Script" path="res://scripts/DialogBar.gd" id="1_so34t"]
+[ext_resource type="Texture2D" uid="uid://txxyuh4v4njw" path="res://resources/QRs/qr-for-dialogs.png" id="2_uva0k"]
 
 [node name="DialogBar" type="PanelContainer"]
 offset_left = 9.0
@@ -21,3 +22,6 @@ offset_left = 1077.0
 offset_top = 87.0
 offset_right = 1117.0
 offset_bottom = 127.0
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_uva0k")
+stretch_mode = 2
