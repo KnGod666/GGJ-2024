@@ -7,7 +7,7 @@ extends Node2D
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	play_initial_cutscene()
-	changeMap(0,0)
+	changeMap(1,0)
 	pass # Replace with function body.
 
 

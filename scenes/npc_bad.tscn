@@ -26,7 +26,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4k6j0"]
 
 [node name="NPC Bad" instance=ExtResource("1_h7bpv")]
-gravity_scale = 0.0
 script = ExtResource("2_3csg2")
 
 [node name="ObstacleSprite" parent="." index="0"]
@@ -55,13 +54,17 @@ shape = SubResource("RectangleShape2D_gy41c")
 
 [node name="E" type="AnimatedSprite2D" parent="." index="5"]
 visible = false
-position = Vector2(2.99999, -292)
+light_mask = 15
+visibility_layer = 127
+z_index = 4
+position = Vector2(3, -228)
 scale = Vector2(0.508, 0.526)
 sprite_frames = SubResource("SpriteFrames_owecq")
+autoplay = "default"
 
 [node name="Interact" type="Area2D" parent="." index="6"]
-collision_layer = 32
-collision_mask = 2
+collision_layer = 17
+collision_mask = 3
 
 [node name="ColliInteract" type="CollisionShape2D" parent="Interact" index="0"]
 scale = Vector2(27.44, 27.44)
@@ -69,5 +72,5 @@ shape = SubResource("RectangleShape2D_4k6j0")
 debug_color = Color(0.8, 0.392157, 0.411765, 0.419608)
 
 [connection signal="timeout" from="Mov" to="." method="_on_mov_timeout"]
-[connection signal="body_entered" from="Interact" to="." method="_on_interact_body_entered"]
-[connection signal="body_exited" from="Interact" to="." method="_on_interact_body_exited"]
+[connection signal="area_entered" from="Interact" to="." method="_on_interact_area_entered"]
+[connection signal="area_exited" from="Interact" to="." method="_on_interact_area_exited"]

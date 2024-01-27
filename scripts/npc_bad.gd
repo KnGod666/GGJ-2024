@@ -45,11 +45,10 @@ func _on_area_2d_area_entered(area):
 
 
 #Para la interaccion XxXxXxXxXxXxXxXxX
-func _on_interact_body_entered(body):
-	if body.name == "character":
+func _on_interact_area_entered(area):
+	if area.name == "Area2D":
 		$E.visible = true
 
-
-func _on_interact_body_exited(body):
-	if body.name == "character":
+func _on_interact_area_exited(area):
+	if area.name == "Area2D":
 		$E.visible = false
