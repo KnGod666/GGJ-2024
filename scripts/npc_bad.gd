@@ -6,7 +6,7 @@ var der = false
 var puede = true
 
 func _ready():
-	pass
+	$E.visible = false
 
 
 func _process(delta):
