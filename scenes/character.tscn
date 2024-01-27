@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkcum44ela4cm"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_phnoy"]
-[ext_resource type="Texture2D" path="res://resources/Character/Character.png" id="2_ftv4r"]
+[ext_resource type="Texture2D" uid="uid://bus4w7jri10oe" path="res://resources/Character/Character.png" id="2_ftv4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dltgj"]
 custom_solver_bias = 1.0

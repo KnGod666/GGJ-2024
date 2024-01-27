@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://r3wxy55ieyur"]
+[gd_scene load_steps=6 format=3 uid="uid://sutwqoh2ktq3"]
 
 [ext_resource type="Script" path="res://scripts/testCharacter.gd" id="1_bwcuy"]
-[ext_resource type="Texture2D" path="res://resources/Character/Character.png" id="2_natmv"]
+[ext_resource type="Texture2D" uid="uid://bus4w7jri10oe" path="res://resources/Character/Character.png" id="2_natmv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_whla1"]
 bounce = 1.0
@@ -14,6 +14,7 @@ size = Vector2(110, 125)
 size = Vector2(130, 140)
 
 [node name="testCharacter" type="RigidBody2D"]
+z_index = 3
 physics_material_override = SubResource("PhysicsMaterial_whla1")
 gravity_scale = 0.0
 script = ExtResource("1_bwcuy")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://beyeey78iegq"]
 
-[ext_resource type="PackedScene" uid="uid://r3wxy55ieyur" path="res://scenes/testCharacter.tscn" id="2_1fwjw"]
+[ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="2_1fwjw"]
 [ext_resource type="PackedScene" uid="uid://bkodx2xwr2g1" path="res://scenes/obstacles/bumper.tscn" id="2_yvvps"]
 [ext_resource type="PackedScene" uid="uid://cxhecx1k03sm6" path="res://scenes/DialogBox.tscn" id="4_h6tn0"]
 
@@ -88,4 +88,4 @@ shape = SubResource("RectangleShape2D_b1eve")
 [node name="DialogBox" parent="." instance=ExtResource("4_h6tn0")]
 
 [node name="testCharacter" parent="." instance=ExtResource("2_1fwjw")]
-position = Vector2(421, 300)
+position = Vector2(490, 288)
