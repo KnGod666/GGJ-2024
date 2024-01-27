@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/baseScene.gd" id="1_jkeie"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
-[ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="3_6eqt6"]
+[ext_resource type="PackedScene" uid="uid://r3wxy55ieyur" path="res://scenes/testCharacter.tscn" id="3_6eqt6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r084f"]
 shader = ExtResource("2_ft3qt")
