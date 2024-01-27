@@ -1,10 +1,13 @@
 extends Node2D
 signal changeScene
 @export var spawns :Array
-@onready var base = $".."
+@onready var base = $"//root/Base/"
 var dark = false
 var E_vis = false
 var sombra
+var order = ["", "", "", ""]
+var txt 
+var i = 0
 
 
 func _ready():
@@ -16,6 +19,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("accion") and E_vis:
 		Acciones()
+		E_vis = false
 
 
 func switchScene(id, spawn):
@@ -93,7 +97,7 @@ func _on_camino_3_area_entered(area):
 func _on_central_area_entered(area):
 	entr(area, $Areas/Central/E1)
 	sombra = 5
-
+ 
 
 func _on_central_area_exited(area):
 		sal(area, $Areas/Sombra1/E1)
@@ -107,15 +111,49 @@ func Acciones():
 	if sombra == 0:
 		pass
 	if sombra == 1:
-		pass
+		if i <= 3:
+			txt = ["Odio GoDot..."]
+			base.show_dialog(txt)
+			order[i] = "1"
+			i += 1
+			Orden()
+	if order == ["4", "3", "2", "1"]:
+		$Areas/Central.process_mode = Node.PROCESS_MODE_INHERIT
+		i = 0
 	if sombra == 2:
-		pass
+		if i <= 3:
+			txt = ["Necesito un sugar.", "YA!!!!!!."]
+			base.show_dialog(txt)
+			order[i] = "2"
+			i += 1
+			Orden()
+		i = 0
 	if sombra == 3:
-		pass
+		if i <= 3:
+			txt = ["Jose Marti?", "Enserio?"]
+			base.show_dialog(txt)
+			order[i] = "3"
+			i += 1
+			Orden()
+		i = 0
 	if sombra == 4:
-		pass
+		if i <= 3:
+			txt = ["Yo era aesteti deso...", "Mirame ahora."]
+			base.show_dialog(txt)
+			order[i] = "4"
+			i += 1
+			Orden()
+		i = 0
 	if sombra == 5:
-		pass
+		switchScene(0, 0)
 
 
-
+func Orden():
+	if i == 0:
+		$"HUD/Panel/1".text = order[i]
+	if i == 1:
+		$"HUD/Panel/1".text = order[i]
+	if i == 2:
+		$"HUD/Panel/1".text = order[i]
+	if i == 3:
+		$"HUD/Panel/1".text = order[i]
