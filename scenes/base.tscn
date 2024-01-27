@@ -1,5 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bciiqifr3pmi2"]
-
+[gd_scene load_steps=10 format=3 uid="uid://dpmcgfkl5s2lf"]
 
 [ext_resource type="Script" path="res://scripts/baseScene.gd" id="1_jkeie"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
@@ -11,10 +10,64 @@ shader_parameter/iMouse = null
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rj85a"]
 
+[sub_resource type="Animation" id="Animation_iqkbr"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.189465, 2.54913, 0.258816),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h187i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h2505"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ms6b1"]
+_data = {
+"RESET": SubResource("Animation_h187i"),
+"fade_in": SubResource("Animation_iqkbr"),
+"fade_out": SubResource("Animation_h2505")
+}
+
 [node name="Base" type="Node2D"]
 script = ExtResource("1_jkeie")
 
 [node name="maps" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="maps"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -33,9 +86,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_rj85a")
 
+[node name="TextureRect2" type="ColorRect" parent="Camera2D"]
+z_index = 16
+offset_left = 1153.0
+offset_top = 700.0
+offset_right = 1232.0
+offset_bottom = 781.0
+scale = Vector2(-29.6632, -16.7546)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/TextureRect2"]
+libraries = {
+"": SubResource("AnimationLibrary_ms6b1")
+}
+
 [node name="Player" parent="." instance=ExtResource("3_6eqt6")]
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 update_rotation = false
 update_scale = false
+
+[connection signal="animation_finished" from="Camera2D/TextureRect2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

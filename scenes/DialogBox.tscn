@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b254v84nbpjs6"]
+[gd_scene load_steps=3 format=3 uid="uid://cxhecx1k03sm6"]
 
 [ext_resource type="Script" path="res://scripts/DialogBox.cs" id="1_jnh05"]
 [ext_resource type="Script" path="res://scripts/DialogBar.cs" id="2_23ulx"]
@@ -6,10 +6,11 @@
 [node name="DialogBox" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 1122.0
+offset_bottom = 129.0
 script = ExtResource("1_jnh05")
 
 [node name="DialogBar" type="PanelContainer" parent="."]
-layout_mode = 0
 offset_left = 9.0
 offset_top = 495.0
 offset_right = 1131.0
