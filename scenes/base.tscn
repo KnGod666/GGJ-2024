@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpmcgfkl5s2lf"]
+[gd_scene load_steps=4 format=3 uid="uid://dpmcgfkl5s2lf"]
 
 [ext_resource type="PackedScene" uid="uid://bkcum44ela4cm" path="res://scenes/character.tscn" id="1_2pkn8"]
+[ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r084f"]
+shader = ExtResource("2_ft3qt")
 
 [node name="Base" type="Node2D"]
 
@@ -10,3 +14,10 @@
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Camera2D"]
 remote_path = NodePath("../../Player")
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_r084f")
+offset_left = -579.0
+offset_top = -323.0
+offset_right = 581.0
+offset_bottom = 323.0
