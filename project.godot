@@ -12,13 +12,18 @@ config_version=5
 
 config/name="GGJ-2024"
 run/main_scene="res://scenes/character.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 boot_splash/image="res://resources/Logo.png"
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalConstants="*res://scripts/global_constants.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 

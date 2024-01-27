@@ -1,5 +1,6 @@
 extends RigidBody2D
 @export var isMortal:bool = false
+@export var qrCoords:Vector2i
 var rand = RandomNumberGenerator.new()
 #Para direcc y habilitar mov XxXxXxXxXxXxX
 var der = false 
@@ -7,9 +8,11 @@ var puede = true
 
 func _ready():
 	$E.visible = false
+	$QR.frame_coords = qrCoords
+	pass
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 
