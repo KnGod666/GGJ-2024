@@ -1,5 +1,6 @@
 extends Node2D
 @onready var raycast = $RayCast2D
+
 var move_direction = Vector2(0,0)
 var speed = 500
 # Called when the node enters the scene tree for the first time.

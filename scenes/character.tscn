@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkcum44ela4cm"]
+[gd_scene load_steps=3 format=3 uid="uid://dmuwgeonfxppi"]
 
-[ext_resource type="Script" path="res://scripts/character.gd" id="1_phnoy"]
+[ext_resource type="Script" path="res://scripts/Character/character.gd" id="1_xhjr0"]
 [ext_resource type="Texture2D" uid="uid://8xn4bgpr4rka" path="res://icon.svg" id="2_uycg0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dltgj"]
-custom_solver_bias = 1.0
-size = Vector2(120, 120)
-
-[node name="Player" type="Node2D"]
-script = ExtResource("1_phnoy")
+[node name="Node2D" type="Node2D"]
+position = Vector2(650, 291)
+script = ExtResource("1_xhjr0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uycg0")
