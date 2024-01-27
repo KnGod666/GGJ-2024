@@ -1,11 +1,135 @@
-[gd_scene load_steps=29 format=3 uid="uid://3m4qinq8wv23"]
+[gd_scene load_steps=33 format=3 uid="uid://3m4qinq8wv23"]
 
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_821o8"]
 [ext_resource type="Script" path="res://scripts/Map/hollow_lvl.gd" id="2_6ppst"]
 [ext_resource type="PackedScene" uid="uid://woslu6v1xrk8" path="res://scenes/npc_bad.tscn" id="2_pik6w"]
-[ext_resource type="Texture2D" uid="uid://dkx1iylgeaakq" path="res://resources/E.png" id="3_du1g8"]
-[ext_resource type="Texture2D" uid="uid://dbcatntv1sb5q" path="res://resources/focal.png" id="4_m7mvp"]
-[ext_resource type="Texture2D" uid="uid://dh45nnp4mvka3" path="res://resources/QRs/Mapa.png" id="6_jhwhr"]
+[ext_resource type="Texture2D" uid="uid://c5syij5vhoxgc" path="res://resources/E.png" id="3_du1g8"]
+[ext_resource type="Texture2D" uid="uid://bxlbcr212wanu" path="res://resources/focal.png" id="4_m7mvp"]
+[ext_resource type="Texture2D" uid="uid://bmd0gehc44jml" path="res://resources/QRs/G-3.png" id="6_pp1dc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_po3aa"]
+bounce = 1.0
+
+[sub_resource type="GDScript" id="GDScript_aiwrk"]
+script/source = "extends RigidBody2D
+@export var isMortal:bool = false
+@export var qrCoords:Vector2i
+var rand = RandomNumberGenerator.new()
+#Para direcc y habilitar mov XxXxXxXxXxXxX
+var der = false 
+var puede = true
+
+func _ready():
+	$QR.frame_coords = qrCoords
+	pass
+
+
+func _process(_delta):
+	pass
+
+
+#Movimiento aleatorio pero no XxXxXxXxXxX
+func _on_mov_timeout():
+	var rnd = rand.randi_range(0,3)
+	if rnd <= 2:
+		if der == false and puede == true:
+			set_axis_velocity(Vector2(-200, 0))
+			der = true
+			puede = false
+		if der == true and puede == true:
+			set_axis_velocity(Vector2(200, 0))
+			der = false
+			puede = false
+		puede = true
+		await get_tree().create_timer(1).timeout
+		set_axis_velocity(Vector2(1, 0))
+
+
+func _on_area_2d_area_entered(area):
+	if area.name == \"PlayerArea\":
+		var player = area.get_parent()
+		if isMortal:
+			player.kill()
+
+
+#Esto es para pulas E y que se reproduzca el dialogo que pongas en >>>> get_node(\"...\").show_dialog(\"\") <<<< XxXxXxXxX
+#func _input(event):
+#	if $E.visible and event.is_action_pressed(\"accion\"):
+#		get_node(\"...\").show_dialog(\"\")
+#		pass
+
+
+#Para la interaccion XxXxXxXxXxXxXxXxX
+func _on_interact_area_entered(area):
+	if area.name == \"PlayerArea\":
+		$E.visible = true
+
+func _on_interact_area_exited(area):
+	if area.name == \"PlayerArea\":
+		$E.visible = false
+"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d4dcf"]
+bounce = 1.0
+
+[sub_resource type="GDScript" id="GDScript_t40j1"]
+script/source = "extends RigidBody2D
+@export var isMortal:bool = false
+@export var qrCoords:Vector2i
+var rand = RandomNumberGenerator.new()
+#Para direcc y habilitar mov XxXxXxXxXxXxX
+var der = false 
+var puede = true
+
+func _ready():
+	$QR.frame_coords = qrCoords
+	pass
+
+
+func _process(_delta):
+	pass
+
+
+#Movimiento aleatorio pero no XxXxXxXxXxX
+func _on_mov_timeout():
+	var rnd = rand.randi_range(0,3)
+	if rnd <= 2:
+		if der == false and puede == true:
+			set_axis_velocity(Vector2(-200, 0))
+			der = true
+			puede = false
+		if der == true and puede == true:
+			set_axis_velocity(Vector2(200, 0))
+			der = false
+			puede = false
+		puede = true
+		await get_tree().create_timer(1).timeout
+		set_axis_velocity(Vector2(1, 0))
+
+
+func _on_area_2d_area_entered(area):
+	if area.name == \"PlayerArea\":
+		var player = area.get_parent()
+		if isMortal:
+			player.kill()
+
+
+#Esto es para pulas E y que se reproduzca el dialogo que pongas en >>>> get_node(\"...\").show_dialog(\"\") <<<< XxXxXxXxX
+#func _input(event):
+#	if $E.visible and event.is_action_pressed(\"accion\"):
+#		get_node(\"...\").show_dialog(\"\")
+#		pass
+
+
+#Para la interaccion XxXxXxXxXxXxXxXxX
+func _on_interact_area_entered(area):
+	if area.name == \"PlayerArea\":
+		$E.visible = true
+
+func _on_interact_area_exited(area):
+	if area.name == \"PlayerArea\":
+		$E.visible = false
+"
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bx1v6"]
 bounce = 1.0
@@ -167,7 +291,19 @@ layer_0/tile_data = PackedInt32Array(-1769421, 393216, 2, -1703884, 393216, 2, 7
 position = Vector2(3402, -190)
 scale = Vector2(1.095, 1.095)
 
-[node name="UltimaSombra" parent="NPCs" index="1" instance=ExtResource("2_pik6w")]
+[node name="Random" parent="NPCs" index="1" instance=ExtResource("2_pik6w")]
+position = Vector2(2212, 395)
+scale = Vector2(1.095, 1.095)
+physics_material_override = SubResource("PhysicsMaterial_po3aa")
+script = SubResource("GDScript_aiwrk")
+
+[node name="Random2" parent="NPCs" index="2" instance=ExtResource("2_pik6w")]
+position = Vector2(6052, -1490)
+scale = Vector2(1.095, 1.095)
+physics_material_override = SubResource("PhysicsMaterial_d4dcf")
+script = SubResource("GDScript_t40j1")
+
+[node name="UltimaSombra" parent="NPCs" index="3" instance=ExtResource("2_pik6w")]
 position = Vector2(358, 1291)
 scale = Vector2(1.095, 1.095)
 physics_material_override = SubResource("PhysicsMaterial_bx1v6")
@@ -454,9 +590,9 @@ label_settings = SubResource("LabelSettings_3qcgp")
 
 [node name="Qr" type="Sprite2D" parent="." index="8"]
 top_level = true
-position = Vector2(-574, -2062)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("6_jhwhr")
+position = Vector2(-540, -2072)
+scale = Vector2(1.03, 1.03)
+texture = ExtResource("6_pp1dc")
 
 [connection signal="area_entered" from="Areas/Sombra1" to="." method="_on_sombra_1_area_entered"]
 [connection signal="area_exited" from="Areas/Sombra1" to="." method="_on_sombra_1_area_exited"]
