@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://3m4qinq8wv23"]
+[gd_scene load_steps=21 format=3 uid="uid://3m4qinq8wv23"]
 
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_821o8"]
 [ext_resource type="Script" path="res://scripts/Map/hollow_lvl.gd" id="2_6ppst"]
 [ext_resource type="PackedScene" uid="uid://woslu6v1xrk8" path="res://scenes/npc_bad.tscn" id="2_pik6w"]
 [ext_resource type="Texture2D" uid="uid://c5syij5vhoxgc" path="res://resources/E.png" id="3_du1g8"]
+[ext_resource type="Texture2D" uid="uid://bxlbcr212wanu" path="res://resources/focal.png" id="4_m7mvp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bx1v6"]
 bounce = 1.0
@@ -68,6 +69,9 @@ func _on_interact_area_exited(area):
 		$E.visible = false
 "
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u31tm"]
+load_path = "res://.godot/imported/focal.png-937a44bace60e91a4f71df7223a7a7f2.ctex"
+
 [sub_resource type="Gradient" id="Gradient_vk2gj"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_x13rc"]
@@ -109,7 +113,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdc8u"]
-size = Vector2(152.125, 167.938)
+size = Vector2(426, 708)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tkvj"]
 size = Vector2(390, 320)
@@ -120,11 +124,14 @@ size = Vector2(393, 570)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5rux"]
 size = Vector2(400, 596)
 
-[sub_resource type="LabelSettings" id="LabelSettings_l4olh"]
-font_size = 56
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvyvr"]
+size = Vector2(120, 296)
 
-[sub_resource type="LabelSettings" id="LabelSettings_07prg"]
-font_size = 56
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55rgy"]
+size = Vector2(276, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x4l6"]
+size = Vector2(68, 266)
 
 [node name="HollowLvl" instance=ExtResource("1_821o8")]
 script = ExtResource("2_6ppst")
@@ -146,10 +153,49 @@ script = SubResource("GDScript_3n7vy")
 layer_0/tile_data = PackedInt32Array(720927, 131072, 0, 720926, 131072, 0, 720925, 131072, 0, 720924, 131072, 0, 720923, 131072, 0, 720922, 131072, 0, 720921, 131072, 0, 720920, 131072, 0, 720934, 131072, 0, 720935, 131072, 0, 720936, 131072, 0, 720937, 131072, 0, 720938, 131072, 0, 720939, 131072, 0, 720940, 131072, 0, 720941, 131072, 0, -262113, 524288, 0, -262112, 524288, 0, -262111, 524288, 0, -262110, 524288, 0, -262109, 524288, 0, -262108, 524288, 0, -262107, 524288, 0, -262106, 524288, 0, -262114, 524288, 0, -262105, 524288, 0, -196561, 524288, 2, -131025, 524288, 2, -65489, 524288, 2, 47, 524288, 2, 65583, 524288, 2, 131119, 524288, 2, -262099, 524288, 0, -262098, 524288, 0, 655407, 524288, 2, 589871, 524288, 2, 524335, 524288, 2, -196588, 393216, 0, -131052, 393216, 0, -65516, 393216, 0, 20, 393216, 0, 65556, 393216, 0, 131092, 393216, 0, 196628, 393216, 0, 262164, 393216, 0, 327700, 393216, 0, 393236, 393216, 0, 262202, 524288, 2, 327738, 524288, 2, 393274, 524288, 2, -655296, 524288, 2, -589760, 524288, 2, -720832, 524288, 2, -393162, 393216, 0, -327626, 393216, 0, -262090, 393216, 0, -1179601, 393216, 0, -1114065, 393216, 0, -1048529, 393216, 0, -655333, 131072, 0, -655332, 131072, 0, -655331, 131072, 0, -655330, 131072, 0, -917493, 524288, 0, -917492, 524288, 0, -917491, 524288, 0, -851965, 393216, 0, -786429, 393216, 0, -720893, 393216, 0, -1507328, 524288, 0, -1507327, 524288, 0, -1507326, 524288, 0, -2097145, 524288, 0, -2097144, 524288, 0, -2097143, 524288, 0, -1376259, 393216, 0, -1310723, 393216, 0, -1245187, 393216, 0, -2097135, 524288, 0, -2097134, 524288, 0, -2097133, 524288, 0, 1376254, 131072, 0, 1376255, 131072, 0, 1310720, 131072, 0, 1310729, 131072, 0, 1310730, 131072, 0, 1310731, 131072, 0, 458754, 524288, 0, 458755, 524288, 0, 458756, 524288, 0, 1179650, 131072, 0, 1179651, 131072, 0, 1179652, 131072, 0, 1179653, 131072, 0, 1179654, 131072, 0, 1179655, 131072, 0)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Luces" index="0"]
-visible = false
 color = Color(0, 0, 0, 1)
-energy = 2.9
+energy = 0.7
 blend_mode = 2
+
+[node name="Sombra" type="PointLight2D" parent="Luces" index="1"]
+position = Vector2(-912, 967)
+color = Color(1, 0.101961, 0.101961, 1)
+energy = 2.54
+blend_mode = 2
+texture = ExtResource("4_m7mvp")
+texture_scale = 8.43
+
+[node name="Sombra2" type="PointLight2D" parent="Luces" index="2"]
+position = Vector2(495, 1492)
+color = Color(1, 0.101961, 0.101961, 1)
+energy = 1.19
+blend_mode = 2
+texture = SubResource("CompressedTexture2D_u31tm")
+texture_scale = 9.63
+
+[node name="Sombra3" type="PointLight2D" parent="Luces" index="3"]
+position = Vector2(1349, -363)
+color = Color(1, 0.101961, 0.101961, 1)
+energy = 2.54
+blend_mode = 2
+texture = ExtResource("4_m7mvp")
+texture_scale = 8.43
+
+[node name="Sombra4" type="PointLight2D" parent="Luces" index="4"]
+position = Vector2(2749, -2792)
+color = Color(1, 0.101961, 0.101961, 1)
+energy = 2.54
+blend_mode = 2
+texture = ExtResource("4_m7mvp")
+texture_scale = 8.43
+
+[node name="Sombra5" type="PointLight2D" parent="Luces" index="5"]
+position = Vector2(5563, -2547)
+color = Color(1, 0.101961, 0.101961, 1)
+energy = 2.54
+blend_mode = 2
+texture = ExtResource("4_m7mvp")
+texture_scale = 8.43
 
 [node name="Exit" type="GPUParticles2D" parent="Particulas" index="0"]
 position = Vector2(3527, 429)
@@ -202,10 +248,11 @@ sprite_frames = SubResource("SpriteFrames_7yfn2")
 autoplay = "default"
 
 [node name="Col" type="CollisionShape2D" parent="Areas/Sombra1" index="1"]
-position = Vector2(69.5, -17.5)
+position = Vector2(66, -42)
 shape = SubResource("RectangleShape2D_sdc8u")
 
 [node name="Central" type="Area2D" parent="Areas" index="1"]
+process_mode = 4
 position = Vector2(-4494, 546)
 
 [node name="E1" type="AnimatedSprite2D" parent="Areas/Central" index="0"]
@@ -273,6 +320,27 @@ autoplay = "default"
 position = Vector2(-26, -90)
 shape = SubResource("RectangleShape2D_v5rux")
 
+[node name="camino1" type="Area2D" parent="Areas" index="5"]
+position = Vector2(-1376, 529)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/camino1" index="0"]
+position = Vector2(50, -22)
+shape = SubResource("RectangleShape2D_lvyvr")
+
+[node name="camino2" type="Area2D" parent="Areas" index="6"]
+position = Vector2(638, -767)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/camino2" index="0"]
+position = Vector2(104, -2)
+shape = SubResource("RectangleShape2D_55rgy")
+
+[node name="camino3" type="Area2D" parent="Areas" index="7"]
+position = Vector2(1180, 97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/camino3" index="0"]
+position = Vector2(44, 22)
+shape = SubResource("RectangleShape2D_5x4l6")
+
 [node name="Marker2D" type="Marker2D" parent="." index="6"]
 position = Vector2(3510, 2171)
 
@@ -284,31 +352,16 @@ offset_top = 1.0
 offset_right = 267.0
 offset_bottom = 95.0
 
-[node name="cinco" type="Label" parent="HUD/Panel" index="0"]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 9.0
-offset_right = 192.0
-offset_bottom = 114.0
-text = "/5"
-label_settings = SubResource("LabelSettings_l4olh")
-
-[node name="edit" type="Label" parent="HUD/Panel" index="1"]
-layout_mode = 0
-offset_left = 87.0
-offset_top = 10.0
-offset_right = 127.0
-offset_bottom = 87.0
-text = "0"
-label_settings = SubResource("LabelSettings_07prg")
-
 [connection signal="area_entered" from="Areas/Sombra1" to="." method="_on_sombra_1_area_entered"]
 [connection signal="area_exited" from="Areas/Sombra1" to="." method="_on_sombra_1_area_exited"]
-[connection signal="area_entered" from="Areas/Central" to="." method="_on_sombra_1_area_entered"]
-[connection signal="area_exited" from="Areas/Central" to="." method="_on_sombra_1_area_exited"]
+[connection signal="area_entered" from="Areas/Central" to="." method="_on_central_area_entered"]
+[connection signal="area_exited" from="Areas/Central" to="." method="_on_central_area_exited"]
 [connection signal="area_entered" from="Areas/Sombra2" to="." method="_on_sombra_2_area_entered"]
 [connection signal="area_exited" from="Areas/Sombra2" to="." method="_on_sombra_2_area_exited"]
 [connection signal="area_entered" from="Areas/Sombra3" to="." method="_on_sombra_3_area_entered"]
 [connection signal="area_exited" from="Areas/Sombra3" to="." method="_on_sombra_3_area_exited"]
 [connection signal="area_entered" from="Areas/Sombra4" to="." method="_on_sombra_4_area_entered"]
 [connection signal="area_exited" from="Areas/Sombra4" to="." method="_on_sombra_4_area_exited"]
+[connection signal="area_entered" from="Areas/camino1" to="." method="_on_camino_1_area_entered"]
+[connection signal="area_entered" from="Areas/camino2" to="." method="_on_camino_2_area_entered"]
+[connection signal="area_entered" from="Areas/camino3" to="." method="_on_camino_3_area_entered"]
