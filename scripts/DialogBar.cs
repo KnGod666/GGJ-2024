@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public partial class DialogBar : PanelContainer
 {
+	private readonly string ACTION = "accion";
 	private RichTextLabel dialogTextNode;
 	private List<string> messages = new ();
 	private int actualMessage = 0;
@@ -15,7 +16,8 @@ public partial class DialogBar : PanelContainer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		dialogTextNode = GetNode<RichTextLabel>("DialogBarText");
+		Hide();
+		dialogTextNode = GetNode<RichTextLabel > ("DialogBarText");
 		hasNext = true;
 	}
 
@@ -24,7 +26,7 @@ public partial class DialogBar : PanelContainer
 	{
 		if(delay == time_to_reset){
 			delay = 0;
-			if(hasNext&&textPosition < messages[actualMessage].Length && actualMessage < messages.Count){
+			if(hasNext && textPosition < messages[actualMessage].Length && actualMessage < messages.Count){
 				dialogTextNode.Text += messages[actualMessage][textPosition];
 				textPosition++;
 			}
@@ -45,23 +47,28 @@ public partial class DialogBar : PanelContainer
 		return hasNext;
 	}
 
-	public void ShowMessages(string actualDialog)
+	public void ShowMessages(string npcName, string npcDialogState)
 	{
+		Show();
 		DialogsClass dialogs = new DialogsClass();
-		var texts = dialogs.GetDictionary();
-		foreach (string msg in texts[actualDialog])
+		var texts = dialogs.GetDialogSet(npcName, npcDialogState);
+		foreach (string msg in texts)
 		{
 			messages.Add(msg);
 		}
-		// messages.Add("Texto aleatorio generado porque me da la gana.");
-		// messages.Add("Segundo texto aleatorio generado porque me da la gana.");
-		// messages.Add("Tercer aleatorio generado porque me da la gana.");
-		// messages.Add("Caraculo.");
 		actualMessage = 0;
 		textPosition = 0;
 		dialogTextNode.Text = "";
 	}
-	public bool GetHasNext(){
-		return hasNext;
+
+	public override void _Input(InputEvent @event)
+	{
+		base._Input(@event);
+		if(@event.IsActionPressed(ACTION)){
+			if(!NextMessage())
+			{
+				Hide();
+			}
+		}
 	}
 }
