@@ -17,9 +17,9 @@ public partial class DialogBox : Control
 
 	}
 
-    public override void _Input(InputEvent @event)
-    {
-        base._Input(@event);
+	public override void _Input(InputEvent @event)
+	{
+		base._Input(@event);
 		if(@event.IsActionPressed(ACTION)){
 			if(dialog_box.GetHasNext())
 			{
@@ -30,5 +30,5 @@ public partial class DialogBox : Control
 
 			}
 		}
-    }
+	}
 }

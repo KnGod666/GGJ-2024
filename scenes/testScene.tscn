@@ -1,7 +1,11 @@
+[gd_scene load_steps=14 format=3 uid="uid://beyeey78iegq"]
 [gd_scene load_steps=9 format=3 uid="uid://beyeey78iegq"]
 
 [ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="2_1fwjw"]
 [ext_resource type="PackedScene" uid="uid://bkodx2xwr2g1" path="res://scenes/obstacles/bumper.tscn" id="2_yvvps"]
+[ext_resource type="Texture2D" uid="uid://bguphebdxuhig" path="res://resources/Logo.png" id="3_xcptr"]
+[ext_resource type="PackedScene" uid="uid://b254v84nbpjs6" path="res://scenes/DialogBox.tscn" id="4_h6tn0"]
+[ext_resource type="PackedScene" uid="uid://br2nixytv6qa7" path="res://scenes/npc_bad.tscn" id="5_kdqo0"]
 [ext_resource type="PackedScene" uid="uid://cxhecx1k03sm6" path="res://scenes/DialogBox.tscn" id="4_h6tn0"]
 
 [sub_resource type="Shader" id="Shader_qpdjr"]
@@ -86,6 +90,10 @@ position = Vector2(576, 639)
 shape = SubResource("RectangleShape2D_b1eve")
 
 [node name="DialogBox" parent="." instance=ExtResource("4_h6tn0")]
+
+[node name="NPC Bad" parent="." instance=ExtResource("5_kdqo0")]
+position = Vector2(212, 313)
+scale = Vector2(0.425, 0.425)
 
 [node name="testCharacter" parent="." instance=ExtResource("2_1fwjw")]
 position = Vector2(490, 288)
