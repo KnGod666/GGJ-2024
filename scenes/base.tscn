@@ -72,7 +72,7 @@ script = ExtResource("1_jkeie")
 [node name="Node2D" type="Node2D" parent="maps"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.7, 0.7)
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D"]
 z_index = -1
@@ -90,10 +90,10 @@ texture = SubResource("PlaceholderTexture2D_rj85a")
 
 [node name="DialogBar" parent="Camera2D" instance=ExtResource("3_ec6hh")]
 z_index = 10
-offset_left = -687.0
-offset_top = 414.0
-offset_right = 435.0
-offset_bottom = 543.0
+offset_left = -674.0
+offset_top = 239.0
+offset_right = 448.0
+offset_bottom = 368.0
 scale = Vector2(1.20175, 1.50528)
 
 [node name="TextureRect2" type="ColorRect" parent="Camera2D"]

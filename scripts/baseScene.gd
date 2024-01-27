@@ -22,6 +22,11 @@ func play_initial_cutscene():
 
 func changeMap(id, spawn):
 	$Camera2D/TextureRect2/AnimationPlayer.play("fade_in")
+	if id == 1:
+		$Camera2D/TextureRect.material.shader = load("res://shaders/raymarch2.gdshader")
+	else:
+		$Camera2D/TextureRect.material.shader = load("res://shaders/raymarch.gdshader")
+		pass
 	await $Camera2D/TextureRect2/AnimationPlayer.animation_finished
 	var scene = load(GlobalConstants.maps_ids[id])
 	if scene.can_instantiate():
