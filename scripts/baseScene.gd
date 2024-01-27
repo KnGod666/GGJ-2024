@@ -7,7 +7,7 @@ extends Node2D
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	play_initial_cutscene()
-	changeMap(1,0)
+	changeMap(0,0)
 	pass # Replace with function body.
 
 
@@ -28,4 +28,3 @@ func changeMap(id, spawn):
 		maps.call_deferred("add_child", scene)
 		scene.changeScene.connect(changeMap)
 	pass
-

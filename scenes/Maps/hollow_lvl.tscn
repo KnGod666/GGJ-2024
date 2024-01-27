@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://b20mrrahjd1q0"]
+[gd_scene load_steps=16 format=3 uid="uid://dfw31ynlm8r4d"]
 
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_821o8"]
 [ext_resource type="PackedScene" uid="uid://br2nixytv6qa7" path="res://scenes/npc_bad.tscn" id="2_pik6w"]
-[ext_resource type="Texture2D" uid="uid://c4ihvesda0sqq" path="res://resources/E.png" id="3_du1g8"]
+[ext_resource type="Texture2D" uid="uid://dkx1iylgeaakq" path="res://resources/E.png" id="3_du1g8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bx1v6"]
 bounce = 1.0
@@ -66,7 +66,6 @@ func _on_interact_area_exited(area):
 	if area.name == \"Area2D\":
 		$E.visible = false
 "
-
 
 [sub_resource type="Gradient" id="Gradient_vk2gj"]
 
