@@ -11,3 +11,12 @@ script = ExtResource("1_xhjr0")
 texture = ExtResource("2_uycg0")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-100, -100)
+collide_with_areas = true
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+shape = SubResource("RectangleShape2D_dltgj")
+
+[connection signal="area_entered" from="PlayerArea" to="." method="_on_player_area_area_entered"]
