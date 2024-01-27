@@ -25,7 +25,7 @@ public partial class DialogBar : PanelContainer
 	{
 		if(delay == time_to_reset){
 			delay = 0;
-			if(textPosition < messages[actualMessage].Length && actualMessage < messages.Count){
+			if(hasNext&&textPosition < messages[actualMessage].Length && actualMessage < messages.Count){
 				dialogTextNode.Text += messages[actualMessage][textPosition];
 				textPosition++;
 			}

@@ -11,6 +11,6 @@ size = Vector2(120, 120)
 [node name="ObstacleSprite" parent="." index="0"]
 texture = ExtResource("2_eivrw")
 
-[node name="CollisionShape2D" parent="ObstacleArea" index="0"]
+[node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_dn671")
 debug_color = Color(0, 0.6, 0.701961, 0.796078)
