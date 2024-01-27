@@ -13,7 +13,8 @@ size = Vector2(149, 296)
 size = Vector2(149, 296)
 
 [node name="Begin" instance=ExtResource("1_jd8cm")]
-spawns = [Vector2(300, 400), Vector2(1800, 700), Vector2(-1900, 1000)]
+position = Vector2(20, 32)
+spawns = [Vector2(300, 400), Vector2(1800, 700), Vector2(-1900, 1000), Vector2(-960, -812)]
 
 [node name="Function" type="Node2D" parent="." index="0"]
 script = ExtResource("2_y3j3g")
