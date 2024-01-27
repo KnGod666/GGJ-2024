@@ -1,12 +1,30 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwqbsibe8uwe3"]
+[gd_scene load_steps=16 format=3 uid="uid://bwqbsibe8uwe3"]
 
 [ext_resource type="Script" path="res://scenes/Maps/Level1/lvl1.cs" id="1_d1o3o"]
-[ext_resource type="Texture2D" uid="uid://cti75idfk04w7" path="res://resources/Map/33 sin título_20240126181738.png" id="1_jf250"]
-[ext_resource type="Texture2D" uid="uid://dqmc7uwfm4qxh" path="res://resources/Map/Tile map.png" id="2_8arqs"]
-[ext_resource type="PackedScene" uid="uid://dmuwgeonfxppi" path="res://scenes/character.tscn" id="2_upy2n"]
+[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="1_jf250"]
+[ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="2_8arqs"]
+[ext_resource type="PackedScene" uid="uid://bkcum44ela4cm" path="res://scenes/character.tscn" id="2_upy2n"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="3_4walh"]
-[ext_resource type="Texture2D" uid="uid://ca4uvt3rryvl6" path="res://resources/Map/photo1706300487.jpeg" id="3_mxq01"]
+[ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="3_mxq01"]
 [ext_resource type="Script" path="res://scripts/DialogBar.cs" id="5_s8tkp"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_mv7it"]
+script/source = "using Godot;
+using System;
+
+public partial class HideMouse : Node2D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0
@@ -167,7 +185,7 @@ shader_parameter/iMouse = null
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4vhch"]
 
 [node name="Level1" type="Node2D"]
-position = Vector2(9, 0)
+script = SubResource("CSharpScript_mv7it")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sekpi")
@@ -199,10 +217,10 @@ script = ExtResource("1_d1o3o")
 
 [node name="DialogBar" type="PanelContainer" parent="Camera2D2/Control"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 495.0
-offset_right = 1131.0
-offset_bottom = 624.0
+offset_left = -1.0
+offset_top = 497.0
+offset_right = 1121.0
+offset_bottom = 626.0
 script = ExtResource("5_s8tkp")
 
 [node name="DialogBarText" type="RichTextLabel" parent="Camera2D2/Control/DialogBar"]
@@ -213,10 +231,10 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D2/Control/DialogBar/Control"]
 layout_mode = 0
-offset_left = 1077.0
-offset_top = 87.0
-offset_right = 1117.0
-offset_bottom = 127.0
+offset_left = 1071.0
+offset_top = 75.0
+offset_right = 1111.0
+offset_bottom = 115.0
 
 [node name="Player" parent="." instance=ExtResource("2_upy2n")]
 z_index = 1

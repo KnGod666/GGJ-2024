@@ -13,7 +13,7 @@ size = Vector2(110, 125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qq2eu"]
 size = Vector2(130, 140)
 
-[node name="testCharacter" type="RigidBody2D"]
+[node name="Character" type="RigidBody2D"]
 z_index = 3
 physics_material_override = SubResource("PhysicsMaterial_whla1")
 gravity_scale = 0.0

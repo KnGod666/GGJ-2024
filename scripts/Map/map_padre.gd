@@ -26,33 +26,7 @@ func _physics_process(delta):
 	pass
 
 
-func _on_sombra_1_area_entered(area):
-	entr(area, $Areas/Sombra1/E1)
-
-
-func _on_sombra_2_area_entered(area):
-	entr(area, $Areas/Sombra2/E2)
-
-
-func _on_sombra_3_area_entered(area):
-	entr(area, $Areas/Sombra3/E3)
-
-
-func _on_sombra_4_area_entered(area):
-	entr(area, $Areas/Sombra4/E4)
-
-
-func _on_sombra_1_area_exited(area):
-	sal(area, $Areas/Sombra1/E1)
-
-
-func _on_sombra_2_area_exited(area):
-	sal(area, $Areas/Sombra2/E2)
-
-
-func _on_sombra_3_area_exited(area):
-	sal(area, $Areas/Sombra3/E3)
-
-
-func _on_sombra_4_area_exited(area):
-	sal(area, $Areas/Sombra4/E4)
+func _on_soul_room_entrance_body_entered(body):
+	print(body.name)
+	if body.name == "Player":
+		emit_signal("changeScene",1,0)

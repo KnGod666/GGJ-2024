@@ -67,6 +67,7 @@ func _on_interact_area_exited(area):
 		$E.visible = false
 "
 
+
 [sub_resource type="Gradient" id="Gradient_vk2gj"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_x13rc"]

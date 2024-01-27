@@ -7,12 +7,14 @@ public class DialogsClass
 {
 	public readonly Dictionary<string, Dictionary<string, List<string>>> Texts = new();
 	
+    public List<string> GetDialogSet(string npcName, string npcDialogState)
+    {
+        return Texts[npcName][npcDialogState];
+    }
+
 	public DialogsClass()
 	{
-
-	}
-	public Dictionary<string, List<string>> GetDictionary(){
-		return JoseDialogs();
+        Texts["jose"] = JoseDialogs();
 	}
 
 	private Dictionary<string, List<string>> JoseDialogs()
