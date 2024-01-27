@@ -65,6 +65,23 @@ public class Dialogs
 
         jose_dialogs["dialogo_inicial"] = dialogo_inicial;
 
+        var dialogo_explicativo1 = new List<string>
+        {
+            "Vas a necesitar conexión a internet, destreza y quizás un poco de paciencia para llegar al otro lado",
+            "Siendo víctima del capitalismo hostil y sin salario solo te queda como opción",
+            "Superar estas pruebas..."
+        };
+        jose_dialogs["dialogo_explicativo1"] = dialogo_explicativo1;
+
+
+        var dialogo_explicativo_lvl_1 = new List<string>
+        {
+            "Entre la multitud muchos intentarán confundirte, incluso navegar por sitios que no te llevan a ningún lugar",
+            "Algunos pueden decir que tienen la respuesta para tus problemas, pero seamos realistas, ",
+            "tus organos tienen buen precio en eol mercado negro. Hay que ser cuidadoso"
+        };
+        jose_dialogs["dialogo_explicativo_lvl_1"] = dialogo_explicativo_lvl_1;
+
         return jose_dialogs;
     }
 }
