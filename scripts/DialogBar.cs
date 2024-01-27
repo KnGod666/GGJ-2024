@@ -34,7 +34,7 @@ public partial class DialogBar : PanelContainer
 	}
 	public bool NextMessage()
 	{
-		GD.Print("VARS: ", textPosition," ", messages[actualMessage].Length," ", actualMessage," ", hasNext );
+		// GD.Print("VARS: ", textPosition," ", messages[actualMessage].Length," ", actualMessage," ", hasNext );
 		if(textPosition < messages[actualMessage].Length){
 			dialogTextNode.Text = messages[actualMessage];
 			textPosition = messages[actualMessage].Length;
