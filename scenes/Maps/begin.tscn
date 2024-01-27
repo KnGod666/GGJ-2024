@@ -96,11 +96,13 @@ layer_0/tile_data = PackedInt32Array(-131077, 262144, 196608, -65541, 262144, 19
 
 [node name="NPC Bad" parent="NPCs" index="0" instance=ExtResource("3_rnxen")]
 position = Vector2(614, 838)
+qrCoords = Vector2i(1, 3)
 
 [node name="Lol" parent="NPCs" index="1" instance=ExtResource("3_rnxen")]
 position = Vector2(-316, 448)
 physics_material_override = SubResource("PhysicsMaterial_ur1y6")
 script = SubResource("GDScript_v5wyv")
+qrCoords = Vector2i(2, 2)
 
 [node name="SoulRoomEntrance" type="Area2D" parent="Areas" index="0"]
 
