@@ -4,6 +4,10 @@ extends RigidBody2D
 var move_direction = Vector2(0,0)
 var speed = 500
 
+
+@onready var mouseTransform = $mouseTransform
+@onready var moveDir = $movedirection
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,7 +24,6 @@ func _input(event):
 		var e = event as InputEventMouseMotion
 		if e.velocity.length() > 400:
 			move_direction = e.velocity.normalized()
-
 
 func _on_area_2d_body_entered(body):
 	raycast.target_position = move_direction*Vector2(120,120)

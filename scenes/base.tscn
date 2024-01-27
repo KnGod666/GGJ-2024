@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bciiqifr3pmi2"]
 
-[ext_resource type="PackedScene" uid="uid://dmuwgeonfxppi" path="res://scenes/character.tscn" id="1_2pkn8"]
+
 [ext_resource type="Script" path="res://scripts/baseScene.gd" id="1_jkeie"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
+[ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="3_6eqt6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r084f"]
 shader = ExtResource("2_ft3qt")
@@ -13,25 +14,28 @@ shader_parameter/iMouse = null
 [node name="Base" type="Node2D"]
 script = ExtResource("1_jkeie")
 
-[node name="Player" parent="." instance=ExtResource("1_2pkn8")]
-z_index = 1
-position = Vector2(198, 758)
+[node name="maps" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_r084f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1152.0
+offset_top = -647.0
+offset_right = 1147.0
+offset_bottom = 653.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_rj85a")
+
+[node name="Player" parent="." instance=ExtResource("3_6eqt6")]
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 update_rotation = false
 update_scale = false
-
-[node name="maps" type="Node2D" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(198, 758)
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D"]
-z_index = -1
-material = SubResource("ShaderMaterial_r084f")
-offset_left = -579.0
-offset_top = -323.0
-offset_right = 581.0
-offset_bottom = 323.0
-texture = SubResource("PlaceholderTexture2D_rj85a")
