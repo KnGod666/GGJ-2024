@@ -3,14 +3,15 @@ extends RigidBody2D
 @onready var raycast = $RayCast2D
 var move_direction = Vector2(0,0)
 var speed = 500
-
+var stopped = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	move_and_collide(move_direction*speed*delta)
-	pass
+	if not stopped:
+		move_and_collide(move_direction*speed*delta)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -38,3 +39,7 @@ func _on_area_2d_body_entered(body):
 	if raycast.is_colliding():
 		move_direction = move_direction.bounce(raycast.get_collision_normal())
 		return
+
+func kill():
+	print("you dead")
+	pass
