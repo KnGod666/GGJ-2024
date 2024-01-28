@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bciiqifr3pmi2"]
+[gd_scene load_steps=12 format=3 uid="uid://bciiqifr3pmi2"]
 
 [ext_resource type="Script" path="res://scripts/baseScene.gd" id="1_jkeie"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
 [ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="3_6eqt6"]
 [ext_resource type="PackedScene" uid="uid://cxhecx1k03sm6" path="res://scenes/DialogBox.tscn" id="3_ec6hh"]
+[ext_resource type="AudioStream" uid="uid://bpcaip5sy4vjv" path="res://resources/Sound/tema.mp3" id="5_su1ts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r084f"]
 shader = ExtResource("2_ft3qt")
@@ -115,3 +116,7 @@ libraries = {
 remote_path = NodePath("../../Camera2D")
 update_rotation = false
 update_scale = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_su1ts")
+autoplay = true
