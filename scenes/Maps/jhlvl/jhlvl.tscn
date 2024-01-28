@@ -232,7 +232,7 @@ qrCoords = Vector2i(1, 1)
 
 [node name="NPC Bad4" parent="." instance=ExtResource("3_efa67")]
 position = Vector2(545, -449)
-qrCoords = Vector2i(0, 2)
+qrCoords = Vector2i(0, 3)
 
 [node name="NPC Bad5" parent="." instance=ExtResource("3_efa67")]
 position = Vector2(193, -450)
