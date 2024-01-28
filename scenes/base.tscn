@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpmcgfkl5s2lf"]
+[gd_scene load_steps=10 format=3 uid="uid://bciiqifr3pmi2"]
 
 [ext_resource type="Script" path="res://scripts/baseScene.gd" id="1_jkeie"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
