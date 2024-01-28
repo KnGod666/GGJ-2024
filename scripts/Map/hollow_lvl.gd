@@ -102,7 +102,6 @@ func _on_central_area_entered(area):
 func _on_central_area_exited(area):
 		sal(area, $Areas/Sombra1/E1)
 
-
 func Acciones():
 	if sombra == -2:
 		pass
@@ -158,5 +157,3 @@ func Orden():
 		$"HUD/Panel/1".text = order[i]
 	if i == 3:
 		$"HUD/Panel/1".text = order[i]
-		pass
-		

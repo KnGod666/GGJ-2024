@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4xnbywbkok80"]
+[gd_scene load_steps=6 format=3 uid="uid://c4xnbywbkok80"]
 
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_jd8cm"]
 [ext_resource type="Script" path="res://scripts/Map/BeginScript.gd" id="2_y3j3g"]
@@ -9,8 +9,11 @@ size = Vector2(400, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqllf"]
 size = Vector2(149, 296)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkiww"]
+size = Vector2(149, 296)
+
 [node name="Begin" instance=ExtResource("1_jd8cm")]
-spawns = [Vector2(300, 400), Vector2(1800, 700)]
+spawns = [Vector2(300, 400), Vector2(1800, 700), Vector2(-1900, 1000)]
 
 [node name="Function" type="Node2D" parent="." index="0"]
 script = ExtResource("2_y3j3g")
@@ -32,5 +35,12 @@ shape = SubResource("RectangleShape2D_7grei")
 position = Vector2(2089, 698)
 shape = SubResource("RectangleShape2D_yqllf")
 
+[node name="JhRoomEntrance" type="Area2D" parent="Areas" index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/JhRoomEntrance" index="0"]
+position = Vector2(-2263, 950)
+shape = SubResource("RectangleShape2D_mkiww")
+
 [connection signal="body_entered" from="Areas/SoulRoomEntrance" to="Function" method="_on_soul_room_entrance_body_entered"]
 [connection signal="body_entered" from="Areas/KnRoomEntrance" to="Function" method="_on_soul_room_entrance_2_body_entered"]
+[connection signal="body_entered" from="Areas/JhRoomEntrance" to="Function" method="_on_jh_room_entrance_body_entered"]
