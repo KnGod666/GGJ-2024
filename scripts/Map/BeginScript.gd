@@ -21,3 +21,9 @@ func _on_soul_room_entrance_2_body_entered(body):
 	if body.name == "Player":
 		get_parent().switchScene(2,0)
 	pass # Replace with function body.
+
+
+func _on_jh_room_entrance_body_entered(body):
+	if body.name == "Player":
+		get_parent().switchScene(3,0)
+	pass # Replace with function body.

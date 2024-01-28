@@ -94,7 +94,6 @@ func _on_camino_3_area_entered(area):
 	Cambio()
 
 
-<<<<<<< HEAD
 func _on_central_area_entered(area):
 	entr(area, $Areas/Central/E1)
 	sombra = 5
@@ -103,9 +102,6 @@ func _on_central_area_entered(area):
 func _on_central_area_exited(area):
 		sal(area, $Areas/Sombra1/E1)
 
-
-=======
->>>>>>> e1ef825d12b76ac3dd54c377d0cf7e317e185207
 func Acciones():
 	if sombra == -2:
 		pass
@@ -114,7 +110,6 @@ func Acciones():
 	if sombra == 0:
 		pass
 	if sombra == 1:
-<<<<<<< HEAD
 		if i <= 3:
 			txt = ["Odio GoDot..."]
 			base.show_dialog(txt)
@@ -124,9 +119,7 @@ func Acciones():
 	if order == ["4", "3", "2", "1"]:
 		$Areas/Central.process_mode = Node.PROCESS_MODE_INHERIT
 		i = 0
-=======
 		base.show_dialog()
->>>>>>> e1ef825d12b76ac3dd54c377d0cf7e317e185207
 	if sombra == 2:
 		if i <= 3:
 			txt = ["Necesito un sugar.", "YA!!!!!!."]
@@ -144,7 +137,6 @@ func Acciones():
 			Orden()
 		i = 0
 	if sombra == 4:
-<<<<<<< HEAD
 		if i <= 3:
 			txt = ["Yo era aesteti deso...", "Mirame ahora."]
 			base.show_dialog(txt)
@@ -165,7 +157,3 @@ func Orden():
 		$"HUD/Panel/1".text = order[i]
 	if i == 3:
 		$"HUD/Panel/1".text = order[i]
-=======
-		pass
-		
->>>>>>> e1ef825d12b76ac3dd54c377d0cf7e317e185207

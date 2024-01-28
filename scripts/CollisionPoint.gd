@@ -25,6 +25,7 @@ func _on_interact_body_entered(body):
 	globalBody = body
 	if body.name == "Player":
 		$LineEdit.show()
+		$LineEdit.grab_focus()
 
 
 func _on_interact_body_exited(body):
