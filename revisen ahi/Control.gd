@@ -1,6 +1,6 @@
-extends Node
+extends Control
 
-const maps_ids = {0:"res://scenes/Maps/begin.tscn",1:"res://scenes/Maps/hollow_lvl.tscn"}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

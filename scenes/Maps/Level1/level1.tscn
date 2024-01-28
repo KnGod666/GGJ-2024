@@ -1,4 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwqbsibe8uwe3"]
+[gd_scene load_steps=15 format=3 uid="uid://bwqbsibe8uwe3"]
+
 
 [ext_resource type="Script" path="res://scenes/Maps/Level1/lvl1.cs" id="1_d1o3o"]
 [ext_resource type="Texture2D" uid="uid://cti75idfk04w7" path="res://resources/Map/33 sin título_20240126181738.png" id="1_jf250"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ca4uvt3rryvl6" path="res://resources/Map/photo1706300487.jpeg" id="3_mxq01"]
 [ext_resource type="Script" path="res://scripts/DialogBar.cs" id="5_s8tkp"]
 [ext_resource type="PackedScene" uid="uid://woslu6v1xrk8" path="res://scenes/npc_bad.tscn" id="8_70ayb"]
+
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0
@@ -195,7 +197,7 @@ offset_left = -560.0
 offset_top = -314.0
 offset_right = -520.0
 offset_bottom = -274.0
-script = ExtResource("1_d1o3o")
+script = ExtResource("1_tdm7n")
 
 [node name="DialogBar" type="PanelContainer" parent="Camera2D2/Control"]
 layout_mode = 0
