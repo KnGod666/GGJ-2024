@@ -90,15 +90,6 @@ func _on_camino_3_area_entered(area):
 	Cambio()
 
 
-func _on_central_area_entered(area):
-	entr(area, $Areas/Central/E1)
-	sombra = 5
-
-
-func _on_central_area_exited(area):
-		sal(area, $Areas/Sombra1/E1)
-
-
 func Acciones():
 	if sombra == -2:
 		pass
@@ -107,15 +98,11 @@ func Acciones():
 	if sombra == 0:
 		pass
 	if sombra == 1:
-		pass
+		base.show_dialog()
 	if sombra == 2:
 		pass
 	if sombra == 3:
 		pass
 	if sombra == 4:
 		pass
-	if sombra == 5:
-		pass
-
-
-
+		
