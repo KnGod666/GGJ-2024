@@ -2,7 +2,7 @@ extends Node2D
 @onready var maps = $maps
 @onready var player = $Player
 @onready var camera = $Camera2D
-
+@onready var music = $AudioStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
@@ -25,6 +25,8 @@ func changeMap(id, spawn):
 	await $Camera2D/TextureRect2/AnimationPlayer.animation_finished
 	var scene = load(GlobalConstants.maps_ids[id])
 	if scene.can_instantiate():
+		music.stream = GlobalConstants.music_mappings[id]
+		music.play()
 		scene = scene.instantiate()
 		maps.get_child(0).queue_free()
 		player.position = scene.spawns[spawn]
@@ -44,4 +46,9 @@ func show_dialog(dialog):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "fade_in":
 		pass
+	pass # Replace with function body.
+
+
+func _on_audio_stream_player_finished():
+	music.play()
 	pass # Replace with function body.
