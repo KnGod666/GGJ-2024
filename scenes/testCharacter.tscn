@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://sutwqoh2ktq3"]
 
 [ext_resource type="Script" path="res://scripts/testCharacter.gd" id="1_bwcuy"]
-[ext_resource type="Texture2D" uid="uid://bwqyqnxmmdk14" path="res://resources/Character/CharacterSet.png" id="2_wsbmg"]
+[ext_resource type="Texture2D" uid="uid://bknaju0dxqnkk" path="res://resources/Character/CharacterSet.png" id="2_wsbmg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_whla1"]
 bounce = 1.0

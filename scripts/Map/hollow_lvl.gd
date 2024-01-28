@@ -27,13 +27,13 @@ func switchScene(id, spawn):
 
 
 func entr(area, E):
-	if area.name == "Area2D":
+	if area.name == "PlayerArea":
 		E.visible = true
 		E_vis = true
 
 
 func sal(area, E):
-	if area.name == "Area2D":
+	if area.name == "PlayerArea":
 		E.visible = false
 		E_vis = false
 
@@ -106,54 +106,89 @@ func Acciones():
 	if sombra == -2:
 		pass
 	if sombra == -1:
-		pass
+		txt = ["Eres un ser debil como una rosa blanca...", "PUAHHHH!!!!", "Que?? QUieres el orden de mi cabeza?", "Claro, xq no? El orden esta en la parte mas al norte de mis recuerdos, leelo bien."]
+		$NPCs/UltimaSombra.process_mode = Node.PROCESS_MODE_DISABLED
+		base.show_dialog(txt)
+		await get_tree().create_timer(8).timeout
+		$NPCs/UltimaSombra.process_mode = Node.PROCESS_MODE_INHERIT
 	if sombra == 0:
-		pass
+		txt = ["Llevo dias programando algo inutil...", "Estoy desesperado!", "Ayudame a acomodar mis ideas en el orden correcto y te podras ir pasando por esa mancha negra de ahi.", "Una parte de mi recuerda el orden...", "Pero yo no..."]
+		$NPCs/Beginer.process_mode = Node.PROCESS_MODE_DISABLED
+		base.show_dialog(txt)
+		await get_tree().create_timer(8).timeout
+		$NPCs/Beginer.process_mode = Node.PROCESS_MODE_INHERIT
 	if sombra == 1:
 		if i <= 3:
 			txt = ["Odio GoDot..."]
 			base.show_dialog(txt)
 			order[i] = "1"
-			i += 1
 			Orden()
+			i += 1
 	if order == ["4", "3", "2", "1"]:
 		$Areas/Central.process_mode = Node.PROCESS_MODE_INHERIT
 		i = 0
-		base.show_dialog()
 	if sombra == 2:
 		if i <= 3:
 			txt = ["Necesito un sugar.", "YA!!!!!!."]
 			base.show_dialog(txt)
 			order[i] = "2"
-			i += 1
 			Orden()
-		i = 0
+			i += 1
+		else:
+			i = 0
 	if sombra == 3:
 		if i <= 3:
 			txt = ["Jose Marti?", "Enserio?"]
 			base.show_dialog(txt)
 			order[i] = "3"
-			i += 1
 			Orden()
-		i = 0
+			i += 1
+		else:
+			i = 0
 	if sombra == 4:
 		if i <= 3:
 			txt = ["Yo era aesteti deso...", "Mirame ahora."]
 			base.show_dialog(txt)
 			order[i] = "4"
-			i += 1
 			Orden()
-		i = 0
+			i += 1
+		else:
+			i = 0
 	if sombra == 5:
 		switchScene(0, 0)
 
 
 func Orden():
+	print(order)
 	if i == 0:
 		$"HUD/Panel/1".text = order[i]
 	if i == 1:
-		$"HUD/Panel/1".text = order[i]
+		$"HUD/Panel/2".text = order[i]
 	if i == 2:
-		$"HUD/Panel/1".text = order[i]
+		$"HUD/Panel/3".text = order[i]
 	if i == 3:
-		$"HUD/Panel/1".text = order[i]
+		$"HUD/Panel/4".text = order[i]
+
+
+func _on_beginer_body_entered(body):
+	print(body.name)
+	if $NPCs/Beginer/E.visible == true and body == "Character":
+		pass
+
+
+func _on_inicial_area_entered(area):
+	entr(area, $NPCs/Beginer/E)
+	sombra = 0
+
+
+func _on_inicial_area_exited(area):
+	sal(area, $NPCs/Beginer/E)
+
+
+func _on_otro_area_entered(area):
+	entr(area, $NPCs/UltimaSombra/E)
+	sombra = -1
+
+
+func _on_otro_area_exited(area):
+	sal(area, $NPCs/UltimaSombra/E)

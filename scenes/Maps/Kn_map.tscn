@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=6 format=3 uid="uid://cl62e4ixw75gm"]
-
+[gd_scene load_steps=6 format=3 uid="uid://dp8hlfevyr1ir"]
 
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_o3q7p"]
 [ext_resource type="Script" path="res://scripts/Map/KnMap.gd" id="2_x2nkw"]
