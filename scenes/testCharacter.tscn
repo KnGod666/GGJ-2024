@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://sutwqoh2ktq3"]
 
 [ext_resource type="Script" path="res://scripts/testCharacter.gd" id="1_bwcuy"]
-[ext_resource type="Texture2D" uid="uid://bus4w7jri10oe" path="res://resources/Character/Character.png" id="2_natmv"]
+[ext_resource type="Texture2D" uid="uid://bknaju0dxqnkk" path="res://resources/Character/CharacterSet.png" id="2_wsbmg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_whla1"]
 bounce = 1.0
@@ -22,8 +22,9 @@ script = ExtResource("1_bwcuy")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-22.25, -23.5)
 scale = Vector2(0.215333, 0.19)
-texture = ExtResource("2_natmv")
+texture = ExtResource("2_wsbmg")
 hframes = 2
+vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-22, -23.25)
