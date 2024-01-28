@@ -57,7 +57,7 @@ func AddMesages(npcName, state, dialogs):
 	Texts[npcName][state] = dialogs
 
 func _input(event):
-	if event.is_action_pressed(ACTION):
+	if hasNext and event.is_action_pressed(ACTION):
 		if not NextMessage():
 			hide()
 			ended.emit()
