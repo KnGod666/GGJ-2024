@@ -11,6 +11,11 @@ func _ready():
 func _physics_process(delta):
 	if not stopped:
 		move_and_collide(move_direction*speed*delta)
+	if move_direction >= Vector2(0,0):
+		$Sprite2D.flip_h = false
+	if move_direction <= Vector2(0,0):
+		$Sprite2D.flip_h = true
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
