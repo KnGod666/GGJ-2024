@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b6m6mtp15y0m2" path="res://scenes/obstacles/obstacle.tscn" id="1_h7bpv"]
 [ext_resource type="Script" path="res://scripts/npc_bad.gd" id="2_3csg2"]
-[ext_resource type="Texture2D" uid="uid://c42gt2xktboc3" path="res://resources/Character/28 sin título2_20240126183353.png" id="2_itnih"]
-[ext_resource type="Texture2D" uid="uid://cmvloyossfsj4" path="res://resources/QRs/Malos.png" id="3_5f7kw"]
-[ext_resource type="Texture2D" uid="uid://c5syij5vhoxgc" path="res://resources/E.png" id="5_r654f"]
+[ext_resource type="Texture2D" uid="uid://c715ibfrjxly3" path="res://resources/Character/28 sin título2_20240126183353.png" id="2_itnih"]
+[ext_resource type="Texture2D" uid="uid://h67kikmw1fk1" path="res://resources/QRs/Malos.png" id="3_5f7kw"]
+[ext_resource type="Texture2D" uid="uid://dy0fyydlcqhnm" path="res://resources/E.png" id="5_r654f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7670a"]
 size = Vector2(114.875, 116)
@@ -28,6 +28,7 @@ size = Vector2(8.34548, 8.09038)
 
 [node name="NPC Bad" instance=ExtResource("1_h7bpv")]
 script = ExtResource("2_3csg2")
+qrCoords = Vector2i(0, 0)
 
 [node name="ObstacleSprite" parent="." index="0"]
 z_index = 2
