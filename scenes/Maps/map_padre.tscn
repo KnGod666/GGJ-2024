@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqgoyr01aowkk" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
 [ext_resource type="Shader" path="res://shaders/bricks0.gdshader" id="2_h33y1"]
 [ext_resource type="Shader" path="res://shaders/Static.gdshader" id="2_tqy0q"]
-[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
+[ext_resource type="Texture2D" uid="uid://dj4yt8715aw2y" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
 [ext_resource type="Shader" path="res://shaders/Distortion.gdshader" id="3_3w067"]
 [ext_resource type="PackedScene" uid="uid://bpsvsen7yu0ys" path="res://scenes/obstacles/Spike.tscn" id="6_exawr"]
 [ext_resource type="PackedScene" path="res://scenes/obstacles/SpikeD.tscn" id="7_y1v2k"]
