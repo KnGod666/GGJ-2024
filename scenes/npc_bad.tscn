@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://b6m6mtp15y0m2" path="res://scenes/obstacles/obstacle.tscn" id="1_h7bpv"]
 [ext_resource type="Script" path="res://scripts/npc_bad.gd" id="2_3csg2"]
-[ext_resource type="Texture2D" uid="uid://diahbpgp8fedy" path="res://resources/Character/28 sin título2_20240126183353.png" id="2_itnih"]
-[ext_resource type="Texture2D" uid="uid://c028ruwav3sej" path="res://resources/QRs/QrSet.png" id="4_3qbvw"]
-[ext_resource type="Texture2D" uid="uid://dkx1iylgeaakq" path="res://resources/E.png" id="5_r654f"]
+[ext_resource type="Texture2D" uid="uid://c715ibfrjxly3" path="res://resources/Character/28 sin título2_20240126183353.png" id="2_itnih"]
+[ext_resource type="Texture2D" uid="uid://bxybt8cntu0f7" path="res://resources/QRs/QrSet.png" id="4_3qbvw"]
+[ext_resource type="Texture2D" uid="uid://dy0fyydlcqhnm" path="res://resources/E.png" id="5_r654f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7670a"]
-size = Vector2(114.875, 116)
+size = Vector2(142.438, 146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gy41c"]
-size = Vector2(112, 116)
+size = Vector2(142.5, 147)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_owecq"]
 animations = [{
@@ -27,19 +27,20 @@ animations = [{
 size = Vector2(8.34548, 8.09038)
 
 [node name="NPC Bad" instance=ExtResource("1_h7bpv")]
+position = Vector2(-94, -110)
 script = ExtResource("2_3csg2")
 qrCoords = Vector2i(0, 0)
 
 [node name="ObstacleSprite" parent="." index="0"]
 z_index = 2
-position = Vector2(60.5, 82)
-scale = Vector2(0.502, 0.45)
+position = Vector2(95, 114.25)
+scale = Vector2(0.64, 0.579)
 texture = ExtResource("2_itnih")
 
 [node name="QR" type="Sprite2D" parent="." index="1"]
 z_index = 1
-position = Vector2(60, 79.5)
-scale = Vector2(0.0971817, 0.087)
+position = Vector2(94, 111)
+scale = Vector2(0.118562, 0.1135)
 texture = ExtResource("4_3qbvw")
 hframes = 4
 vframes = 4
@@ -49,11 +50,11 @@ wait_time = 3.0
 autostart = true
 
 [node name="CollisionShape2D" parent="." index="3"]
-position = Vector2(59.4375, 79)
+position = Vector2(94.7813, 112)
 shape = SubResource("RectangleShape2D_7670a")
 
 [node name="CollisionShape2D2" parent="Area2D" index="0"]
-position = Vector2(60, 80)
+position = Vector2(93.25, 110.5)
 shape = SubResource("RectangleShape2D_gy41c")
 
 [node name="E" type="AnimatedSprite2D" parent="." index="5"]
@@ -71,7 +72,7 @@ collision_layer = 17
 collision_mask = 3
 
 [node name="ColliInteract" type="CollisionShape2D" parent="Interact" index="0"]
-position = Vector2(59.5, 78)
+position = Vector2(95, 108)
 scale = Vector2(27.44, 27.44)
 shape = SubResource("RectangleShape2D_4k6j0")
 debug_color = Color(0.8, 0.392157, 0.411765, 0.419608)

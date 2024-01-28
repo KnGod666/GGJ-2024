@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scenes/Maps/jhlvl/jhlvl.gd" id="1_5lkxo"]
 [ext_resource type="PackedScene" uid="uid://woslu6v1xrk8" path="res://scenes/npc_bad.tscn" id="3_efa67"]
 [ext_resource type="Shader" path="res://shaders/bricks0.gdshader" id="4_b4xyt"]
-[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="4_olpqs"]
-[ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="6_yaphm"]
-[ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="7_k2kou"]
+[ext_resource type="Texture2D" uid="uid://dk1iivwnq0hjm" path="res://resources/Map/33 sin título_20240126181738.png" id="4_olpqs"]
+[ext_resource type="Texture2D" uid="uid://sm5hw43irln6" path="res://resources/Map/Tile map.png" id="6_yaphm"]
+[ext_resource type="Texture2D" uid="uid://coocqxdjg5ei0" path="res://resources/Map/photo1706300487.jpeg" id="7_k2kou"]
 [ext_resource type="PackedScene" uid="uid://d0bddgoyr144w" path="res://scenes/Option.tscn" id="9_q16yx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
@@ -209,26 +209,28 @@ qrCoords = Vector2i(0, 3)
 position = Vector2(193, -450)
 qrCoords = Vector2i(2, 0)
 
-[node name="CollisionPoint" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(-566, 225)
-text = "1"
-
-[node name="CollisionPoint2" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(-124, 259)
-text = "2"
-
-[node name="CollisionPoint3" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(366, 256)
-text = "3"
-
-[node name="CollisionPoint4" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(869, 248)
-text = "4"
-
 [node name="ExitArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
 position = Vector2(1313, -55)
 shape = SubResource("RectangleShape2D_xupk6")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CollisionPoint" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(-566, 225)
+text = "1"
+
+[node name="CollisionPoint2" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(-124, 259)
+text = "2"
+
+[node name="CollisionPoint3" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(366, 256)
+text = "3"
+
+[node name="CollisionPoint4" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(869, 248)
+text = "4"
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
