@@ -72,9 +72,13 @@ public class DialogsClass
 
 		var dialogo_explicativo1 = new List<string>
 		{
-			"Vas a necesitar conexión a internet, destreza y quizás un poco de paciencia para llegar al otro lado",
-			"Siendo víctima del capitalismo hostil y sin salario solo te queda como opción",
-			"Superar estas pruebas..."
+			"Todos son muy complicados, pero con un escaneo adecuado podemos llegar a ver con nuestros ojos todo lo que otros piensan.",
+			"Te encuentras en las entrañas del capitalismo y tu misión es reunir dinero.",
+            "No puedes volver mientras tu mision no se encuentre completada.",
+            "Hay monstruos que te impiden conseguir tu objetivo.",
+            "Saben que tu sueldo no te alcanzaría ni para conseguir matrimonio...",
+            "... y deberías agradecer...",
+			"Pero tu objetivo es salir de las entrañas, así que deberás conseguir salario a costa de aquello que los monstruos no quieren."
 		};
 		jose_dialogs["dialogo_explicativo1"] = dialogo_explicativo1;
 
