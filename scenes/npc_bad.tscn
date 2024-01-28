@@ -57,11 +57,10 @@ position = Vector2(60, 80)
 shape = SubResource("RectangleShape2D_gy41c")
 
 [node name="E" type="AnimatedSprite2D" parent="." index="5"]
+visible = false
 light_mask = 15
 visibility_layer = 127
 z_index = 4
-position = Vector2(58, -50)
-scale = Vector2(0.32, 0.363)
 position = Vector2(32, -40)
 scale = Vector2(0.298, 0.283)
 sprite_frames = SubResource("SpriteFrames_owecq")
