@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bmck8vcpdnekr"]
+[gd_scene load_steps=18 format=3 uid="uid://bmck8vcpdnekr"]
 
 [ext_resource type="Script" path="res://scenes/Maps/jhlvl/jhlvl.gd" id="1_5lkxo"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="1_jde1r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dk1iivwnq0hjm" path="res://resources/Map/33 sin título_20240126181738.png" id="4_olpqs"]
 [ext_resource type="Texture2D" uid="uid://sm5hw43irln6" path="res://resources/Map/Tile map.png" id="6_yaphm"]
 [ext_resource type="Texture2D" uid="uid://coocqxdjg5ei0" path="res://resources/Map/photo1706300487.jpeg" id="7_k2kou"]
+[ext_resource type="PackedScene" uid="uid://cqamo2abdwx1k" path="res://scenes/CollisionPoint.tscn" id="9_q16yx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0
@@ -236,3 +237,19 @@ qrCoords = Vector2i(3, 0)
 [node name="NPC Bad5" parent="." instance=ExtResource("3_efa67")]
 position = Vector2(193, -450)
 qrCoords = Vector2i(2, 0)
+
+[node name="CollisionPoint" parent="." instance=ExtResource("9_q16yx")]
+position = Vector2(-566, 225)
+text = "1"
+
+[node name="CollisionPoint2" parent="." instance=ExtResource("9_q16yx")]
+position = Vector2(-124, 259)
+text = "2"
+
+[node name="CollisionPoint3" parent="." instance=ExtResource("9_q16yx")]
+position = Vector2(366, 256)
+text = "3"
+
+[node name="CollisionPoint4" parent="." instance=ExtResource("9_q16yx")]
+position = Vector2(869, 248)
+text = "4"
