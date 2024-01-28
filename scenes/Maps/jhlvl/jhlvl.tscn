@@ -3,9 +3,10 @@
 [ext_resource type="Script" path="res://scenes/Maps/jhlvl/jhlvl.gd" id="1_5lkxo"]
 [ext_resource type="PackedScene" uid="uid://woslu6v1xrk8" path="res://scenes/npc_bad.tscn" id="3_efa67"]
 [ext_resource type="Shader" path="res://shaders/bricks0.gdshader" id="4_b4xyt"]
-[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="4_olpqs"]
-[ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="6_yaphm"]
-[ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="7_k2kou"]
+
+[ext_resource type="Texture2D" uid="uid://dj4yt8715aw2y" path="res://resources/Map/33 sin título_20240126181738.png" id="4_olpqs"]
+[ext_resource type="Texture2D" uid="uid://bqgoyr01aowkk" path="res://resources/Map/Tile map.png" id="6_yaphm"]
+[ext_resource type="Texture2D" uid="uid://b3wq2ywnnan8w" path="res://resources/Map/photo1706300487.jpeg" id="7_k2kou"]
 [ext_resource type="PackedScene" uid="uid://d0bddgoyr144w" path="res://scenes/Option.tscn" id="9_q16yx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
