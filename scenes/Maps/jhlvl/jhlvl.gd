@@ -2,7 +2,7 @@ extends Node2D
 
 signal changeScene
 @export var spawns :Array
-@onready var base = $".."
+@onready var base = $"/root/Base"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,7 +10,7 @@ func _ready():
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_S):
-		$Player.stopped = not $Player.stopped
+		base.get_node("Player").stopped = not base.get_node("Player").stopped
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
