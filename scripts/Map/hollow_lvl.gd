@@ -119,6 +119,7 @@ func Acciones():
 	if order == ["4", "3", "2", "1"]:
 		$Areas/Central.process_mode = Node.PROCESS_MODE_INHERIT
 		i = 0
+		base.show_dialog()
 	if sombra == 2:
 		if i <= 3:
 			txt = ["Necesito un sugar.", "YA!!!!!!."]
