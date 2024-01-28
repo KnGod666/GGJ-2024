@@ -47,6 +47,6 @@ placeholder_text = "Respuesta"
 max_length = 20
 expand_to_text_length = true
 
-[connection signal="area_entered" from="Interact" to="." method="_on_interact_area_entered"]
-[connection signal="area_exited" from="Interact" to="." method="_on_interact_area_exited"]
+[connection signal="body_entered" from="Interact" to="." method="_on_interact_body_entered"]
+[connection signal="body_exited" from="Interact" to="." method="_on_interact_body_exited"]
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

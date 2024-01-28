@@ -16,7 +16,7 @@ func _process(_delta):
 
 func validate(node:String, txt:String):
 	if node == "4" and txt.to_lower() == "marti":
-		print("Respuesta correcta")
+		return true
 	else:
-		print("Die")
+		return false
 	pass
