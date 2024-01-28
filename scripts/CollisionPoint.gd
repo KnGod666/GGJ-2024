@@ -19,7 +19,7 @@ func _on_line_edit_text_submitted(new_text):
 		for child in get_parent().get_children():
 			child.text = "Correcto! :D"
 			child.showable = false
-			GlobalConstants.points+=1
+		GlobalConstants.solved_levels[2] = true
 	else:
 		globalBody.kill()
 	

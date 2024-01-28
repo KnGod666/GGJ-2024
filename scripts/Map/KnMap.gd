@@ -22,3 +22,9 @@ func _on_ltp_body_entered(body):
 	if body.name == "Player":
 		body.position = Vector2(0,0)
 	pass # Replace with function body.
+
+
+func _on_hub_entrance_2_body_entered(body):
+	if body.name == "Player":
+		GlobalConstants.solved_levels[1]=true
+		get_parent().switchScene(0,1)

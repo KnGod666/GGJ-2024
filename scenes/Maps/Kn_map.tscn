@@ -40,5 +40,5 @@ position = Vector2(-632, 1041.5)
 shape = SubResource("RectangleShape2D_ci8x7")
 
 [connection signal="body_entered" from="Areas/HubEntrance" to="Function" method="_on_hub_entrance_body_entered"]
-[connection signal="body_entered" from="Areas/HubEntrance2" to="Function" method="_on_hub_entrance_body_entered"]
+[connection signal="body_entered" from="Areas/HubEntrance2" to="Function" method="_on_hub_entrance_2_body_entered"]
 [connection signal="body_entered" from="Areas/Ltp" to="Function" method="_on_ltp_body_entered"]
