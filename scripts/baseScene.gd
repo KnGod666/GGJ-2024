@@ -28,3 +28,7 @@ func changeMap(id, spawn):
 		maps.call_deferred("add_child", scene)
 		scene.changeScene.connect(changeMap)
 	pass
+
+#gestiona la caja de dialogo
+func show_dialog(dialog):
+	pass
