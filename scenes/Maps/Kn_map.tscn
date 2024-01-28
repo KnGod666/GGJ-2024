@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl62e4ixw75gm"]
+[gd_scene load_steps=6 format=3 uid="uid://cl62e4ixw75gm"]
 
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_o3q7p"]
 [ext_resource type="Script" path="res://scripts/Map/KnMap.gd" id="2_x2nkw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3ysc"]
 size = Vector2(120, 426)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5esc"]
+size = Vector2(317, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci8x7"]
 size = Vector2(212, 187)
@@ -24,11 +27,18 @@ layer_0/tile_data = PackedInt32Array(-65535, 0, 131072, 1, 0, 131072, 2, 0, 1310
 position = Vector2(-767, 1)
 shape = SubResource("RectangleShape2D_s3ysc")
 
-[node name="Ltp" type="Area2D" parent="Areas" index="1"]
+[node name="HubEntrance2" type="Area2D" parent="Areas" index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/HubEntrance2" index="0"]
+position = Vector2(1901.5, -1917)
+shape = SubResource("RectangleShape2D_h5esc")
+
+[node name="Ltp" type="Area2D" parent="Areas" index="2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Ltp" index="0"]
 position = Vector2(-632, 1041.5)
 shape = SubResource("RectangleShape2D_ci8x7")
 
 [connection signal="body_entered" from="Areas/HubEntrance" to="Function" method="_on_hub_entrance_body_entered"]
+[connection signal="body_entered" from="Areas/HubEntrance2" to="Function" method="_on_hub_entrance_body_entered"]
 [connection signal="body_entered" from="Areas/Ltp" to="Function" method="_on_ltp_body_entered"]
