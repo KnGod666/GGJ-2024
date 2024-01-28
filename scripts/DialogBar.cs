@@ -70,4 +70,7 @@ public partial class DialogBar : PanelContainer
 			}
 		}
 	}
+	public void prueba(){
+		GD.Print("------------------------------------------------------------------------------------");
+	}
 }

@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class level1 : Control
+public partial class Level1 : Control
 {
 	private DialogBar dialog_bar;
 	// Called when the node enters the scene tree for the first time.
