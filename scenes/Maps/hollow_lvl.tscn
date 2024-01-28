@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_821o8"]
 [ext_resource type="Script" path="res://scripts/Map/hollow_lvl.gd" id="2_6ppst"]
 [ext_resource type="PackedScene" uid="uid://woslu6v1xrk8" path="res://scenes/npc_bad.tscn" id="2_pik6w"]
-[ext_resource type="Texture2D" uid="uid://dkx1iylgeaakq" path="res://resources/E.png" id="3_du1g8"]
-[ext_resource type="Texture2D" uid="uid://dbcatntv1sb5q" path="res://resources/focal.png" id="4_m7mvp"]
-[ext_resource type="Texture2D" uid="uid://ddg48wdg5yhmn" path="res://resources/QRs/G-3.png" id="6_pp1dc"]
+[ext_resource type="Texture2D" uid="uid://c5syij5vhoxgc" path="res://resources/E.png" id="3_du1g8"]
+[ext_resource type="Texture2D" uid="uid://bxlbcr212wanu" path="res://resources/focal.png" id="4_m7mvp"]
+[ext_resource type="Texture2D" uid="uid://bmd0gehc44jml" path="res://resources/QRs/G-3.png" id="6_pp1dc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_po3aa"]
 bounce = 1.0

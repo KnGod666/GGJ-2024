@@ -1,5 +1,16 @@
 extends Node
-
+var map = {
+	"NPC Bad": 
+		["Voteya123!!", "Digo... No se muy bien como hablar..."],
+	"Lol": 
+		["Todos son muy complicados, pero con un escaneo adecuado podemos llegar a ver con nuestros ojos todo lo que otros piensan.",
+			"Te encuentras en las entrañas del capitalismo y tu misión es reunir dinero.",
+			"No puedes volver mientras tu mision no se encuentre completada.",
+			"Hay monstruos que te impiden conseguir tu objetivo.",
+			"Saben que tu sueldo no te alcanzaría ni para conseguir matrimonio...",
+			"... y deberías agradecer...",
+			"Pero tu objetivo es salir de las entrañas, así que deberás conseguir salario a costa de aquello que los monstruos no quieren."],
+}
 @onready var wall = $"./Sprite2D"
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,8 +23,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func _input(event):
+	if $"../NPCs/NPC Bad/E".visible and event.is_action_pressed("accione"):
+		$"/root/Base/".show_dialog(map["NPC Bad"])
+	if $"../NPCs/Lol/E".visible and event.is_action_pressed("accione"):
+		$"/root/Base/".show_dialog(map["Lol"])
+
 
 
 func _on_soul_room_entrance_body_entered(body):
