@@ -14,4 +14,9 @@ func _input(_event):
 func _process(_delta):
 	pass
 
-
+func validate(node:String, txt:String):
+	if node == "4" and txt.to_lower() == "marti":
+		print("Respuesta correcta")
+	else:
+		print("Die")
+	pass

@@ -8,5 +8,21 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
+
+
+func _on_interact_area_entered(area):
+	$LineEdit.show()
+	pass # Replace with function body.
+
+
+func _on_interact_area_exited(area):
+	$LineEdit.hide()
+	pass # Replace with function body.
+
+
+func _on_line_edit_text_submitted(new_text):
+	get_parent().validate(text, new_text)
+	#print(new_text)
+	pass # Replace with function body.
