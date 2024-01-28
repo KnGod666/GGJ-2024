@@ -1,6 +1,6 @@
 extends PanelContainer
 
-signal ended()
+signal ended
 
 const ACTION = "accion"
 @onready var dialogTextNode = $DialogBarText
@@ -13,8 +13,6 @@ const time_to_reset = 5
 @onready var Texts = {}
 
 func _ready():
-	print("se ejecuta")
-	Texts["jose"] = JoseDialogs()
 	hide()
 
 func _process(_delta):
@@ -35,6 +33,15 @@ func NextMessage():
 	dialogTextNode.text = ""
 	hasNext = actualMessage < len(messages)
 	return hasNext
+
+func coolerShowMessages(dialogs):
+	show()
+	messages = dialogs
+	actualMessage = 0
+	textPosition = 0
+	dialogTextNode.text = ""
+	hasNext = true
+	pass
 
 func ShowMessages(npcName, npcDialogState):
 	show()
