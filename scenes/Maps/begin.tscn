@@ -10,7 +10,7 @@ size = Vector2(400, 100)
 size = Vector2(149, 296)
 
 [node name="Begin" instance=ExtResource("1_jd8cm")]
-spawns = [Vector2(340, 500)]
+spawns = [Vector2(300, 400), Vector2(1800, 700)]
 
 [node name="Function" type="Node2D" parent="." index="0"]
 script = ExtResource("2_y3j3g")
@@ -26,11 +26,11 @@ layer_0/tile_data = PackedInt32Array(-131077, 262144, 196608, -65541, 262144, 19
 position = Vector2(-950, -1052)
 shape = SubResource("RectangleShape2D_7grei")
 
-[node name="SoulRoomEntrance2" type="Area2D" parent="Areas" index="1"]
+[node name="KnRoomEntrance" type="Area2D" parent="Areas" index="1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/SoulRoomEntrance2" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/KnRoomEntrance" index="0"]
 position = Vector2(2089, 698)
 shape = SubResource("RectangleShape2D_yqllf")
 
 [connection signal="body_entered" from="Areas/SoulRoomEntrance" to="Function" method="_on_soul_room_entrance_body_entered"]
-[connection signal="body_entered" from="Areas/SoulRoomEntrance2" to="Function" method="_on_soul_room_entrance_2_body_entered"]
+[connection signal="body_entered" from="Areas/KnRoomEntrance" to="Function" method="_on_soul_room_entrance_2_body_entered"]

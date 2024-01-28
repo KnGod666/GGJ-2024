@@ -1,10 +1,16 @@
 [gd_scene load_steps=27 format=3 uid="uid://deyg60omlxdri"]
 
 [ext_resource type="Script" path="res://scripts/Map/map_padre.gd" id="1_n04t2"]
-[ext_resource type="Texture2D" uid="uid://coocqxdjg5ei0" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
-[ext_resource type="Texture2D" uid="uid://sm5hw43irln6" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
+[ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
+[ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
 [ext_resource type="Shader" path="res://shaders/bricks0.gdshader" id="2_h33y1"]
-[ext_resource type="Texture2D" uid="uid://dk1iivwnq0hjm" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
+[ext_resource type="Shader" path="res://shaders/Static.gdshader" id="2_tqy0q"]
+[ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
+[ext_resource type="Shader" path="res://shaders/Distortion.gdshader" id="3_3w067"]
+[ext_resource type="PackedScene" uid="uid://bpsvsen7yu0ys" path="res://scenes/obstacles/Spike.tscn" id="6_exawr"]
+[ext_resource type="PackedScene" uid="uid://ct3cydnc6rbbf" path="res://scenes/obstacles/SpikeD.tscn" id="7_y1v2k"]
+[ext_resource type="PackedScene" uid="uid://cn0237ef2nb6u" path="res://scenes/obstacles/SpikeL.tscn" id="8_5006l"]
+[ext_resource type="PackedScene" uid="uid://4qsf63nl8y04" path="res://scenes/obstacles/SpikeR.tscn" id="9_vqief"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0

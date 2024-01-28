@@ -31,4 +31,7 @@ func changeMap(id, spawn):
 
 #gestiona la caja de dialogo
 func show_dialog(dialog):
-	pass
+	player.stopped = true
+	$Camera2D/DialogBar.coolerShowMessages(dialog)
+	await $Camera2D/DialogBar.ended
+	player.stopped = false

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bciiqifr3pmi2"]
+[gd_scene load_steps=11 format=3 uid="uid://bciiqifr3pmi2"]
 
 [ext_resource type="Script" path="res://scripts/baseScene.gd" id="1_jkeie"]
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
 [ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="3_6eqt6"]
+[ext_resource type="PackedScene" uid="uid://cxhecx1k03sm6" path="res://scenes/DialogBox.tscn" id="3_ec6hh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r084f"]
 shader = ExtResource("2_ft3qt")
@@ -86,12 +87,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_rj85a")
 
+[node name="DialogBar" parent="Camera2D" instance=ExtResource("3_ec6hh")]
+z_index = 10
+offset_left = -687.0
+offset_top = 414.0
+offset_right = 435.0
+offset_bottom = 543.0
+scale = Vector2(1.20175, 1.50528)
+
 [node name="TextureRect2" type="ColorRect" parent="Camera2D"]
 z_index = 16
-offset_left = 1153.0
-offset_top = 700.0
-offset_right = 1232.0
-offset_bottom = 781.0
+offset_left = 1164.0
+offset_top = 682.0
+offset_right = 1243.0
+offset_bottom = 763.0
 scale = Vector2(-29.6632, -16.7546)
 color = Color(0, 0, 0, 1)
 
