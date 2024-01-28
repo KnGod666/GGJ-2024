@@ -10,6 +10,7 @@ const Pos_Kn = Vector2(-570, 0)
 const Pos_Begin = Vector2(300, 400)
 const Pos_JL = Vector2(0, 0)
 var points = 0
+var solved_levels = [false,false,false]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

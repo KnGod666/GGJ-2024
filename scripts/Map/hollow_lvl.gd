@@ -198,5 +198,5 @@ func _on_otro_area_exited(area):
 
 func _on_salida_body_entered(body):
 	if body.name == "Player":
-		GlobalConstants.points += 1
+		GlobalConstants.solved_levels[0] = true
 		changeScene.emit(0, 3)

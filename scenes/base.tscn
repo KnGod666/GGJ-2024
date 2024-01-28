@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://shaders/raymarch.gdshader" id="2_ft3qt"]
 [ext_resource type="PackedScene" uid="uid://sutwqoh2ktq3" path="res://scenes/testCharacter.tscn" id="3_6eqt6"]
 [ext_resource type="PackedScene" uid="uid://cxhecx1k03sm6" path="res://scenes/DialogBox.tscn" id="3_ec6hh"]
-[ext_resource type="AudioStream" uid="uid://cx1p24sdus58y" path="res://resources/Sound/tema.mp3" id="5_su1ts"]
+[ext_resource type="AudioStream" uid="uid://bpcaip5sy4vjv" path="res://resources/Sound/tema.mp3" id="5_su1ts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r084f"]
 shader = ExtResource("2_ft3qt")
