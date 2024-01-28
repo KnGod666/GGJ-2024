@@ -15,7 +15,7 @@ func _ready():
 		]
 	)
 
-func _input(_event):
+func _input(event):
 	if Input.is_key_pressed(KEY_S):
 		base.get_node("Player").stopped = not base.get_node("Player").stopped
 	pass

@@ -209,26 +209,28 @@ qrCoords = Vector2i(0, 3)
 position = Vector2(193, -450)
 qrCoords = Vector2i(2, 0)
 
-[node name="CollisionPoint" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(-566, 225)
-text = "1"
-
-[node name="CollisionPoint2" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(-124, 259)
-text = "2"
-
-[node name="CollisionPoint3" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(366, 256)
-text = "3"
-
-[node name="CollisionPoint4" parent="." instance=ExtResource("9_q16yx")]
-position = Vector2(869, 248)
-text = "4"
-
 [node name="ExitArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
 position = Vector2(1313, -55)
 shape = SubResource("RectangleShape2D_xupk6")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CollisionPoint" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(-566, 225)
+text = "1"
+
+[node name="CollisionPoint2" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(-124, 259)
+text = "2"
+
+[node name="CollisionPoint3" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(366, 256)
+text = "3"
+
+[node name="CollisionPoint4" parent="Node2D" instance=ExtResource("9_q16yx")]
+position = Vector2(869, 248)
+text = "4"
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
