@@ -61,8 +61,8 @@ visible = false
 light_mask = 15
 visibility_layer = 127
 z_index = 4
-position = Vector2(3, -228)
-scale = Vector2(0.508, 0.526)
+position = Vector2(32, -40)
+scale = Vector2(0.298, 0.283)
 sprite_frames = SubResource("SpriteFrames_owecq")
 autoplay = "default"
 
