@@ -1,13 +1,43 @@
-[gd_scene load_steps=14 format=3 uid="uid://deyg60omlxdri"]
+[gd_scene load_steps=27 format=3 uid="uid://deyg60omlxdri"]
 
 [ext_resource type="Script" path="res://scripts/Map/map_padre.gd" id="1_n04t2"]
 [ext_resource type="Texture2D" uid="uid://oakvm33qlfcn" path="res://resources/Map/photo1706300487.jpeg" id="2_7hs0s"]
 [ext_resource type="Texture2D" uid="uid://d2di3nka0bv5b" path="res://resources/Map/Tile map.png" id="2_fdsp7"]
 [ext_resource type="Shader" path="res://shaders/bricks0.gdshader" id="2_h33y1"]
+[ext_resource type="Shader" path="res://shaders/Static.gdshader" id="2_tqy0q"]
 [ext_resource type="Texture2D" uid="uid://dtlwwbrnfylvf" path="res://resources/Map/33 sin título_20240126181738.png" id="2_wygsr"]
+[ext_resource type="Shader" path="res://shaders/Distortion.gdshader" id="3_3w067"]
+[ext_resource type="PackedScene" uid="uid://bpsvsen7yu0ys" path="res://scenes/obstacles/Spike.tscn" id="6_exawr"]
+[ext_resource type="PackedScene" uid="uid://ct3cydnc6rbbf" path="res://scenes/obstacles/SpikeD.tscn" id="7_y1v2k"]
+[ext_resource type="PackedScene" uid="uid://cn0237ef2nb6u" path="res://scenes/obstacles/SpikeL.tscn" id="8_5006l"]
+[ext_resource type="PackedScene" uid="uid://4qsf63nl8y04" path="res://scenes/obstacles/SpikeR.tscn" id="9_vqief"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q61ld"]
 bounce = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ma7ax"]
+noise_type = 4
+seed = 4
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2cggj"]
+seamless = true
+noise = SubResource("FastNoiseLite_ma7ax")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r6o7y"]
+shader = ExtResource("2_tqy0q")
+shader_parameter/noise = SubResource("NoiseTexture2D_2cggj")
+
+[sub_resource type="Gradient" id="Gradient_j21bx"]
+offsets = PackedFloat32Array(0, 0.260163, 0.520325, 0.715447, 0.853659, 1)
+colors = PackedColorArray(0.059, 0.0944, 0.59, 1, 0.266667, 0.72549, 0.843137, 1, 0.118371, 0.677283, 0.0793461, 1, 0.858824, 0.858824, 0.133333, 1, 0.858824, 0.0862745, 0, 1, 0.972549, 0.141176, 0.87451, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5km1x"]
+gradient = SubResource("Gradient_j21bx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yr8uv"]
+shader = ExtResource("3_3w067")
+shader_parameter/gradient = SubResource("GradientTexture1D_5km1x")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_svv4f"]
 shader = ExtResource("2_h33y1")
@@ -15,13 +45,18 @@ shader = ExtResource("2_h33y1")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2jq1"]
 texture = ExtResource("2_wygsr")
 texture_region_size = Vector2i(100, 100)
-0:0/next_alternative_id = 2
+0:0/next_alternative_id = 3
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/1 = 1
+0:0/1/material = SubResource("ShaderMaterial_r6o7y")
 0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/1/physics_layer_0/angular_velocity = 0.0
+0:0/2 = 2
+0:0/2/material = SubResource("ShaderMaterial_yr8uv")
+0:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/2/physics_layer_0/angular_velocity = 0.0
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
@@ -47,9 +82,22 @@ texture_region_size = Vector2i(100, 100)
 8:2/0 = 0
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
+6:2/next_alternative_id = 2
 6:2/0 = 0
 6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:2/0/physics_layer_0/angular_velocity = 0.0
+6:2/1 = 1
+6:2/1/modulate = Color(0.541176, 0.0313726, 0.443137, 0.694118)
+6:2/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:2/1/physics_layer_0/angular_velocity = 0.0
+6:2/1/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dkg3p"]
+resource_name = "ff"
+scenes/1/scene = ExtResource("6_exawr")
+scenes/2/scene = ExtResource("7_y1v2k")
+scenes/3/scene = ExtResource("8_5006l")
+scenes/4/scene = ExtResource("9_vqief")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yukxc"]
 texture = ExtResource("2_fdsp7")
@@ -168,6 +216,7 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_q61ld")
 sources/3 = SubResource("TileSetAtlasSource_yukxc")
 sources/4 = SubResource("TileSetAtlasSource_b0fs8")
 sources/0 = SubResource("TileSetAtlasSource_u2jq1")
+sources/1 = SubResource("TileSetScenesCollectionSource_dkg3p")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_viif8"]
 texture = ExtResource("2_wygsr")
