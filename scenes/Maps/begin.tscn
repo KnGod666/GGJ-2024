@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4xnbywbkok80"]
+[gd_scene load_steps=9 format=3 uid="uid://c4xnbywbkok80"]
 
 [ext_resource type="PackedScene" uid="uid://deyg60omlxdri" path="res://scenes/Maps/map_padre.tscn" id="1_jd8cm"]
 [ext_resource type="Script" path="res://scripts/Map/BeginScript.gd" id="2_y3j3g"]
+[ext_resource type="Texture2D" uid="uid://djim4gfgxptjg" path="res://resources/34 sin título_20240128074236.png" id="3_vqhso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7grei"]
 size = Vector2(400, 100)
@@ -13,6 +14,9 @@ size = Vector2(149, 296)
 size = Vector2(149, 296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odqkp"]
+size = Vector2(669.661, 133.495)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx4cx"]
 size = Vector2(446, 130)
 
 [node name="Begin" instance=ExtResource("1_jd8cm")]
@@ -45,13 +49,27 @@ position = Vector2(-2263, 950)
 shape = SubResource("RectangleShape2D_mkiww")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="7"]
-position = Vector2(283, 1422)
+position = Vector2(321, 1401)
+rotation = 1.309
+scale = Vector2(1.40016, 2.69496)
+texture = ExtResource("3_vqhso")
 
 [node name="Area2D" type="StaticBody2D" parent="Sprite2D" index="0"]
+rotation = -1.309
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" index="0"]
+position = Vector2(-18.7928, -5.04034)
+rotation = 0.194212
+scale = Vector2(0.308, 1)
 shape = SubResource("RectangleShape2D_odqkp")
+
+[node name="endgameArea" type="Area2D" parent="." index="8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="endgameArea" index="0"]
+position = Vector2(300, 1636)
+shape = SubResource("RectangleShape2D_nx4cx")
 
 [connection signal="body_entered" from="Areas/SoulRoomEntrance" to="Function" method="_on_soul_room_entrance_body_entered"]
 [connection signal="body_entered" from="Areas/KnRoomEntrance" to="Function" method="_on_soul_room_entrance_2_body_entered"]
 [connection signal="body_entered" from="Areas/JhRoomEntrance" to="Function" method="_on_jh_room_entrance_body_entered"]
+[connection signal="body_entered" from="endgameArea" to="Function" method="_on_endgame_area_body_entered"]

@@ -30,3 +30,8 @@ func _on_jh_room_entrance_body_entered(body):
 	if body.name == "Player":
 		get_parent().switchScene(3,0)
 	pass # Replace with function body.
+
+
+func _on_endgame_area_body_entered(body):
+	get_tree().quit()
+	pass # Replace with function body.
