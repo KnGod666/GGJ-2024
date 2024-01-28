@@ -12,7 +12,7 @@ func _physics_process(delta):
 	move_and_collide(move_direction*speed*delta)
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _input(event):
@@ -22,7 +22,7 @@ func _input(event):
 			#move_direction = global_position.direction_to(e.position+get_viewport().get_camera_2d().global_position)
 			move_direction = e.velocity.normalized()
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	raycast.target_position = move_direction*Vector2(120,120)
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
