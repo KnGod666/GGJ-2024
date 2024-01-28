@@ -68,7 +68,7 @@ func JoseDialogs():
 	jose_dialogs["muerte1"] = jose_muerte1
 	# Muerte 2
 
-	var jose_muerte2 = ["Luego de esto tu vida pasa a segundo plano.", "Porque te [b]moriste[b].", "Pero miremos el lado bueno...", "Por fin conocerás a tu abuelo Vicente :)"]
+	var jose_muerte2 = ["Luego de esto tu vida pasa a segundo plano.", "Porque te moriste.", "Pero miremos el lado bueno...", "Por fin conocerás a tu abuelo Vicente :)"]
 	jose_dialogs["muerte2"] = jose_muerte2
 
 	# Muerte 3
