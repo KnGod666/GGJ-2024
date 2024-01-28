@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxhecx1k03sm6"]
 
-[ext_resource type="Script" path="res://scripts/DialogBar.cs" id="2_23ulx"]
+[ext_resource type="Script" path="res://scripts/DialogBar.gd" id="1_so34t"]
 
 [node name="DialogBar" type="PanelContainer"]
 offset_left = 9.0
 offset_top = 495.0
 offset_right = 1131.0
 offset_bottom = 624.0
-script = ExtResource("2_23ulx")
+script = ExtResource("1_so34t")
 
 [node name="DialogBarText" type="RichTextLabel" parent="."]
 layout_mode = 2
