@@ -11,13 +11,15 @@ var i = 0
 
 
 func _ready():
+	$NPCs/Random/QR.frame_coords = Vector2(1,2)
+	$NPCs/Random2/QR.frame_coords = Vector2(0,1)
 	$NPCs/UltimaSombra/QR.frame_coords = Vector2(1,0)
 	var tween = get_tree().create_tween()
 	tween.tween_property($Luces/DirectionalLight2D, "energy", 0, 1.5)
 
 
 func _input(event):
-	if event.is_action_pressed("accion") and E_vis:
+	if event.is_action_pressed("accione") and E_vis:
 		Acciones()
 		E_vis = false
 
@@ -192,3 +194,9 @@ func _on_otro_area_entered(area):
 
 func _on_otro_area_exited(area):
 	sal(area, $NPCs/UltimaSombra/E)
+
+
+func _on_salida_body_entered(body):
+	if body.name == "Player":
+		GlobalConstants.points += 1
+		changeScene.emit(0, 3)

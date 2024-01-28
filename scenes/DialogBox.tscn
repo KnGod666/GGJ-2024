@@ -1,27 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxhecx1k03sm6"]
+[gd_scene load_steps=5 format=3 uid="uid://cxhecx1k03sm6"]
 
 [ext_resource type="Script" path="res://scripts/DialogBar.gd" id="1_so34t"]
 [ext_resource type="Texture2D" uid="uid://txxyuh4v4njw" path="res://resources/QRs/qr-for-dialogs.png" id="2_uva0k"]
 
+[sub_resource type="FontVariation" id="FontVariation_nusom"]
+
+[sub_resource type="Theme" id="Theme_u08d6"]
+default_font = SubResource("FontVariation_nusom")
+default_font_size = 35
+
 [node name="DialogBar" type="PanelContainer"]
-offset_left = 9.0
-offset_top = 495.0
-offset_right = 1131.0
-offset_bottom = 624.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -152.0
+offset_right = -10.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("1_so34t")
 
 [node name="DialogBarText" type="RichTextLabel" parent="."]
 layout_mode = 2
+theme = SubResource("Theme_u08d6")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/table_border = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = 1077.0
-offset_top = 87.0
-offset_right = 1117.0
-offset_bottom = 127.0
+offset_left = 1058.0
+offset_top = 70.0
+offset_right = 1454.0
+offset_bottom = 451.0
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("2_uva0k")
-stretch_mode = 2
