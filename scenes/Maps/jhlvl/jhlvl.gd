@@ -1,5 +1,8 @@
 extends Node2D
 
+signal changeScene
+@export var spawns :Array
+@onready var base = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,3 +23,12 @@ func validate(node:String, txt:String):
 	else:
 		return false
 	pass
+
+func switchScene(id, spawn):
+	emit_signal("changeScene",id,spawn)
+
+
+func _on_exit_area_body_entered(body):
+	if body.name == "Player":
+		switchScene(0,2)
+	pass # Replace with function body.

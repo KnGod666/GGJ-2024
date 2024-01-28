@@ -48,9 +48,9 @@ func _on_area_2d_area_entered(area):
 
 #Para la interaccion XxXxXxXxXxXxXxXxX
 func _on_interact_area_entered(area):
-	if area.name == "Area2D":
+	if area.name == "PlayerArea":
 		$E.visible = true
 
 func _on_interact_area_exited(area):
-	if area.name == "Area2D":
+	if area.name == "PlayerArea":
 		$E.visible = false
