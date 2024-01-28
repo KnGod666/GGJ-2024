@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://sutwqoh2ktq3"]
 
 [ext_resource type="Script" path="res://scripts/testCharacter.gd" id="1_bwcuy"]
-[ext_resource type="Texture2D" uid="uid://bus4w7jri10oe" path="res://resources/Character/Character.png" id="2_natmv"]
+[ext_resource type="Texture2D" uid="uid://bf4igoqexmk0" path="res://resources/Character/Character.png" id="2_natmv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_whla1"]
 bounce = 1.0
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmbej"]
-size = Vector2(110, 125)
+size = Vector2(140, 146.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qq2eu"]
-size = Vector2(130, 140)
+size = Vector2(141, 145)
 
 [node name="Character" type="RigidBody2D"]
 z_index = 3
@@ -20,22 +20,24 @@ gravity_scale = 0.0
 script = ExtResource("1_bwcuy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.50001, -0.999999)
-scale = Vector2(0.16, 0.16)
+position = Vector2(-22.25, -23.5)
+scale = Vector2(0.215333, 0.19)
 texture = ExtResource("2_natmv")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(-22, -23.25)
 shape = SubResource("RectangleShape2D_wmbej")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-23, -23)
 target_position = Vector2(-100, -100)
 collide_with_areas = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-22, -23)
 shape = SubResource("RectangleShape2D_qq2eu")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
