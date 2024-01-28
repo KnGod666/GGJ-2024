@@ -6,7 +6,14 @@ signal changeScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	base.show_dialog(
+		[
+			"Vas a necesitar conexión a internet",
+			"Podras leer los pensamientos de tus iguales con esta herramienta",
+			"Tienes la posibilidad de pausar tu propio movimiento tocando S",
+			"Encontrarás la respuesta correcta?"
+		]
+	)
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_S):
@@ -22,7 +29,6 @@ func validate(node:String, txt:String):
 		return true
 	else:
 		return false
-	pass
 
 func switchScene(id, spawn):
 	emit_signal("changeScene",id,spawn)
